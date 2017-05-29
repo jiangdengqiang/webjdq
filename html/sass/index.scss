@@ -1,0 +1,39 @@
+@import "variables";
+//compass 的雪碧图处理
+$icon: sprite-map("icon/*.png",$spacing: 4px,$layout:smart);
+$icons-2x: sprite-map("icons-2x/*.png",$spacing: 4px, $layout:smart);
+@mixin fnIconSprite($name){
+  width: image-width(sprite-file($icon, $name));
+  height: image-height(sprite-file($icon, $name));
+  background-image: sprite-url($icon);
+  background-position: sprite-position($icon, $name);
+  background-repeat: no-repeat;
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (max-width: 767px) {
+    background-image: sprite-url($icons-2x);
+    background-size: (image-width(sprite-path($icons-2x)) / 2) (image-height(sprite-path($icons-2x)) / 2);
+    background-position: round(nth(sprite-position($icons-2x, $name), 1) / 2) round(nth(sprite-position($icons-2x, $name), 2) / 2);
+    height: image-height(sprite-file($icons-2x, $name)) / 2;
+    width: image-width(sprite-file($icons-2x, $name)) / 2;
+  }
+};
+abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    cursor: url(../images/cursor.ico),auto;
+}
+.main { 
+	color: $fontColor;
+	@include fnIconSprite(add);
+}
+.container {
+	width:1280px;
+	position:relative;
+}
+.clear {
+	content:"";
+	clear: both;
+	height:0;
+	display: block;
+}
+.header {
+	height:80px;
+	background-color:$fontColor;
+}

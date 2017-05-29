@@ -1,0 +1,5 @@
+/*
+@mixin bgLinear($Yvalue,$Scolor,$Ecolor) {background-image:-webkit-linear-gradient($Yvalue, $Scolor, $Ecolor); background-image:-moz-linear-gradient($Yvalue,$Scolor, $Ecolor); background-image:-o-linear-gradient($Yvalue,$Scolor, $Ecolor);background-image:-ms-linear-gradient($Yvalue,$Scolor, $Ecolor); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$Scolor', endColorstr='$Ecolor'); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$Scolor', endColorstr='$Ecolor')"; }
+*/
+
+/*# sourceMappingURL=variables.css.map */

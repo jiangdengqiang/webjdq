@@ -1,0 +1,84 @@
+$fontFamily:'Lato-Regular';
+$fontFamilyLatol:'Lato-Light';
+$fontFamilylatob:'Lato-Bold';
+$fontFamilyLatolb:'Lato-Black';
+$fontFamilyRoboto:'Robotoslab-Regular';
+$fontFamilyRobotol:'Robotoslab-Light';
+$fontFamilyRobotob:'Robotoslab-Bold';
+$sideL:left;
+$sideR:right;
+$fontSize:100%;
+$fontColor:#333;
+$whiteColor:#fff;
+$grayColor:#eee;
+$graybColor:#ebebeb;
+$grayfColor:#f7f7f7;
+$blackColor:#404042;
+$yellowColor:#ff7d00;
+$greenColor:#37ac03;
+$blueColor:#315fac;
+$lblueColor:#8fa6cc;
+$tblueColor:#6bacdd;
+$blueBoder:#4c7dcf;
+$easyColor:#b1b1b1;
+$errorColor:#ff4900;
+$orangelinkColor:#ff7d00;
+$orangeColor:#ff4900;
+$disabledColor:#ffbe7f;
+$lineHeight:1.5em;
+$fontWeight: 300;
+$box-spacing: 20px;
+$subHeadMargin:30px;
+
+
+@mixin inlineBlock {
+  display: inline-block;
+  vertical-align: middle;
+}
+@mixin borderBottom { border-bottom: $easyColor dotted 2px;}
+@mixin borderTop { border-top: $easyColor dotted 2px;}
+@mixin borderblue { border:$blueBoder dotted 2px;}
+
+@mixin hundRed { width: 100%; height: auto;}
+@mixin yellowBtn {
+  display: block;
+  width: 100%;
+  color:#fff;
+  background: #ff7d00;
+  text-align: center;
+  font-size: 18px;
+  border:none;
+  height: 40px;
+  line-height: 40px;
+  &:hover{
+    text-decoration: none;
+  }
+}
+@mixin blueTitle {
+  height: 56px;background: $blueColor;color: #fff;padding-left: 20px; line-height: 56px;width: 100%;
+}
+@mixin autoWarp {overflow-wrap: break-word; word-wrap: break-word; -webkit-hyphens: auto; -ms-hyphens: auto; -moz-hyphens: auto; hyphens: auto;}
+@mixin borderRadius($radius) { border-radius: $radius;-moz-border-radius: $radius;-webkit-border-radius: $radius;}
+@mixin boxTransform($value) {transform:rotate($value); -ms-transform:rotate($value); -moz-transform:rotate($value); -webkit-transform:rotate($value); -o-transform:rotate($value);}
+/*
+@mixin bgLinear($Yvalue,$Scolor,$Ecolor) {background-image:-webkit-linear-gradient($Yvalue, $Scolor, $Ecolor); background-image:-moz-linear-gradient($Yvalue,$Scolor, $Ecolor); background-image:-o-linear-gradient($Yvalue,$Scolor, $Ecolor);background-image:-ms-linear-gradient($Yvalue,$Scolor, $Ecolor); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$Scolor', endColorstr='$Ecolor'); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$Scolor', endColorstr='$Ecolor')"; }
+*/
+@mixin bgLinear($Yvalue,$Scolor,$Ecolor){
+  background: $Scolor;
+  background: -moz-linear-gradient($Yvalue, $Scolor 0%, $Ecolor 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$Scolor), color-stop(100%,$Ecolor));
+  background: -webkit-linear-gradient($Yvalue, $Scolor 0%,$Ecolor 100%);
+  background: -o-linear-gradient($Yvalue, $Scolor 0%,$Ecolor 100%);
+  background: -ms-linear-gradient($Yvalue, $Scolor 0%,$Ecolor 100%);
+  background: linear-gradient(to bottom, $Scolor 0%,$Ecolor 100%);
+}
+@mixin textShadow($x,$y,$blur,$color) { text-shadow:$x $y $blur $color;}
+@mixin boxShadow($color,$x,$y,$blur,$type: false) {
+  @if ($type == true) {
+    box-shadow:$color $x $y $blur inset;-moz-box-shadow:$color $x $y $blur inset;-webkit-box-shadow:$color $x $y $blur inset;
+  }@else{
+    box-shadow:$color $x $y $blur;-moz-box-shadow:$color $x $y $blur;-webkit-box-shadow:$color $x $y $blur;
+  }
+}
+@mixin opacity($opacity) { opacity: $opacity; filter: alpha(opacity=$opacity*100);}
+@mixin rotate($d){transform:rotate($d);-ms-transform:rotate($d);  -moz-transform:rotate($d);  -webkit-transform:rotate($d);  -o-transform:rotate($d);}
