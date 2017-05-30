@@ -1,0 +1,5 @@
+@font-face { font-family: 'Monk'; src: url("../fonts/Monk.otf");
+  /* IE9 Compat Modes */
+src: url("../fonts/Monk.otf?#iefix") format("embedded-opentype"), url("../fonts/monk-webfont.woff2") format("woff2"), url("../fonts/monk-webfont.woff") format("woff"), url("../fonts/Monk.ttf") format("truetype"); font-style: normal; font-weight: normal; text-rendering: optimizeLegibility; }
+
+/*# sourceMappingURL=reset.css.map */

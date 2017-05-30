@@ -1,3 +1,6 @@
+@font-face { font-family: 'Monk'; src: url("../fonts/Monk.otf");
+  /* IE9 Compat Modes */
+src: url("../fonts/Monk.otf?#iefix") format("embedded-opentype"), url("../fonts/monk-webfont.woff2") format("woff2"), url("../fonts/monk-webfont.woff") format("woff"), url("../fonts/Monk.ttf") format("truetype"); font-style: normal; font-weight: normal; text-rendering: optimizeLegibility; }
 /*
 @mixin bgLinear($Yvalue,$Scolor,$Ecolor) {background-image:-webkit-linear-gradient($Yvalue, $Scolor, $Ecolor); background-image:-moz-linear-gradient($Yvalue,$Scolor, $Ecolor); background-image:-o-linear-gradient($Yvalue,$Scolor, $Ecolor);background-image:-ms-linear-gradient($Yvalue,$Scolor, $Ecolor); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$Scolor', endColorstr='$Ecolor'); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$Scolor', endColorstr='$Ecolor')"; }
 */

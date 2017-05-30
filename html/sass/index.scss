@@ -1,3 +1,4 @@
+@import "reset";
 @import "variables";
 //compass 的雪碧图处理
 $icon: sprite-map("icon/*.png",$spacing: 4px,$layout:smart);
