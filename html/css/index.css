@@ -40,7 +40,7 @@ section { position: relative; }
 }
 .head_nav.top .title { display: none;
 }*/
-.nav_link { position: absolute; top: 100px; left: 80px; width: 100px; height: 100px; border-radius: 100%; background-color: #ea4c89; padding: 34px 0; cursor: pointer; box-shadow: 0px 0px 20px #fff; }
+.nav_link { position: absolute; top: 100px; left: 80px; width: 100px; height: 100px; border-radius: 100%; background-color: #000; padding: 34px 0; cursor: pointer; box-shadow: 0px 0px 20px #fff; }
 
 .nav_link > span { display: block; width: 30px; height: 6px; background-color: #fff; margin: 0 auto 6px; cursor: pointer; }
 
