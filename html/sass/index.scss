@@ -58,9 +58,10 @@ section { position:relative;}
 .top { 
   position: relative;
   background: url(../images/top.jpg) no-repeat;
-    height: 700px;
-    background-size: cover;
-    background-position: center;
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  background-attachment:fixed;
 }
 .top .top_bg { 
   position: absolute; 
@@ -81,6 +82,27 @@ section { position:relative;}
   left: 0;
   right: 0;
 }
+/*.head_nav {
+  height: 120px;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 10;
+}
+.head_nav.top .top_bg{
+  opacity: 1;
+}
+.head_nav .nav_link {
+  top: 20px;
+  left: 80px;
+  width: 80px;
+  height: 80px;
+  padding: 25px 0;
+}
+.head_nav.top .title {
+  display: none;
+}*/
 .nav_link {
   position: absolute;
   top:100px;
@@ -292,4 +314,17 @@ section { position:relative;}
   color:#666;
   font-family:"Microsoft Yahei";
   font-size: 0.875em;
+}
+.callback {
+  padding:10px 20px;
+  background-color: #000;
+  font-size: 2em;
+  text-align: center;
+  color: $whiteColor;
+  position: fixed;
+  bottom:30px;
+  right:20px;
+  cursor: pointer;
+  box-shadow: -4px 6px 25px #666;
+  display: none;
 }

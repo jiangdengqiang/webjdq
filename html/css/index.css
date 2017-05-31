@@ -26,12 +26,20 @@ section { position: relative; }
 .clear:after, .tags:after { content: ""; clear: both; display: block; height: 0; }
 
 /*index css*/
-.top { position: relative; background: url(../images/top.jpg) no-repeat; height: 700px; background-size: cover; background-position: center; }
+.top { position: relative; background: url(../images/top.jpg) no-repeat; height: 700px; background-size: cover; background-position: center; background-attachment: fixed; }
 
 .top .top_bg { position: absolute; background-color: #000; opacity: 0.4; height: 100%; top: 0px; left: 0; width: 100%; }
 
 .top .title { color: #fff; font-size: 4.375em; text-align: center; margin: 0; position: absolute; bottom: 260px; left: 0; right: 0; }
 
+/*.head_nav { height: 120px; position: fixed; top: 0px; left: 0px; width: 100%; z-index: 10;
+}
+.head_nav.top .top_bg{ opacity: 1;
+}
+.head_nav .nav_link { top: 20px; left: 80px; width: 80px; height: 80px; padding: 25px 0;
+}
+.head_nav.top .title { display: none;
+}*/
 .nav_link { position: absolute; top: 100px; left: 80px; width: 100px; height: 100px; border-radius: 100%; background-color: #ea4c89; padding: 34px 0; cursor: pointer; box-shadow: 0px 0px 20px #fff; }
 
 .nav_link > span { display: block; width: 30px; height: 6px; background-color: #fff; margin: 0 auto 6px; cursor: pointer; }
@@ -122,5 +130,7 @@ section { position: relative; }
 .foot { background-color: #333; padding: 25px 0; }
 
 .copyright { color: #666; font-family: "Microsoft Yahei"; font-size: 0.875em; }
+
+.callback { padding: 10px 20px; background-color: #000; font-size: 2em; text-align: center; color: #fff; position: fixed; bottom: 30px; right: 20px; cursor: pointer; box-shadow: -4px 6px 25px #666; display: none; }
 
 /*# sourceMappingURL=index.css.map */
