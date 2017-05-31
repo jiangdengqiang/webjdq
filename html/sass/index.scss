@@ -48,6 +48,12 @@ img {
     -ms-interpolation-mode: bicubic;
 }
 section { position:relative;}
+.clear:after{ 
+  content:"";
+  clear: both;
+  display: block;
+  height:0;
+}
 /*index css*/
 .top { 
   position: relative;
@@ -114,17 +120,21 @@ section { position:relative;}
 .share li {
   display: inline-block;
 }
-.share a{
+.share a,.share_news a{
   display: inline-block;
   margin-right: 10px;
 }
-.share a.qq{
+.share_news {
+  float: right;
+  margin-top: 12px;
+}
+.share a.qq,.share_news a.qq{
   @include fnIconSprite(icon1);
 }
-.share a.wx{
+.share a.wx,.share_news a.wx{
   @include fnIconSprite(icon2);
 }
-.share a.wb{
+.share a.wb,,.share_news a.wb{
   @include fnIconSprite(icon3);
 }
 .share a.db{
@@ -197,4 +207,31 @@ section { position:relative;}
   position: absolute;
   right: 0;
   top:1px;
+}
+.more {
+  float: left;
+}
+.j_box {
+  padding:20px 0;
+}
+.j_box >h2 {
+  font-size: 1.375em;
+  margin-bottom: 15px;
+}
+.j_box p {
+  line-height: 1.7;
+}
+.news_end {
+  margin-top: 40px;
+}
+.news_end .more {
+  text-align: center;
+  display: inline-block;
+  padding:15px 35px;
+  background-color:#ea4c89;
+  color:$whiteColor;
+}
+.news_end .more:hover{
+    background-color: #ed145b;
+    box-shadow: 0px 0px 10px #ea4c89;
 }
