@@ -20,25 +20,53 @@ $icons-2x: sprite-map("icons-2x/*.png",$spacing: 4px, $layout:smart);
 abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
     cursor: url(../images/cursor.ico),auto;
 }
+
+/*common css*/
 body {
   font-family: "Monk",Microsoft Yahei,Arial, Helvetica, sans-serif;
   font-size: 100%;
 }
-.main { 
-	color: $fontColor;
-	@include fnIconSprite(add);
+a,a:visited,a:hover,a:active,a:focus { color:$blackColor; outline:none!important; text-decoration:none; }
+img {
+    height: auto;
+    max-width: 100%;
+    vertical-align: middle;
+    border: 0;
+    -ms-interpolation-mode: bicubic;
 }
-.container {
-	width:1280px;
-	position:relative;
+
+/*index css*/
+.top { 
+  position: relative;
 }
-.clear {
-	content:"";
-	clear: both;
-	height:0;
-	display: block;
+.top img{
+  width:100%;
+  max-height: 700px;
 }
-.header {
-	height:80px;
-	background-color:$fontColor;
+.top .top_bg { 
+  position: absolute; 
+  background-color:#000;
+  opacity:0.3;
+  height:100%;
+  top:0px;
+  left:0;
+  width: 100%;
+}
+.nav_link {
+  position: absolute;
+  top:100px;
+  left:80px;
+  width: 100px;
+  height:100px;
+  border-radius:100%;
+  background-color:#ea4c89;
+  padding: 34px 0;
+  cursor: pointer;
+}
+.nav_link > span {
+  display: block;
+  width:30px;
+  height:6px;
+  background-color:$whiteColor;
+  margin:0 auto 6px;
 }
