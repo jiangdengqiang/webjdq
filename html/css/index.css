@@ -63,7 +63,7 @@ section { position: relative; }
 /*list*/
 .j_moudel_box2 { background-color: #f9f9f9; padding: 105px 0 85px; }
 
-.new_list { padding: 30px; background-color: #fff; border: 1px solid #e0dfdf; box-shadow: 0px 0 1px #f1f0f0; }
+.new_list { padding: 30px; background-color: #fff; border: 1px solid #e0dfdf; box-shadow: 0px 0 1px #f1f0f0; margin-bottom: 50px; }
 
 .recommend { background-color: #fff; border: 1px solid #e0dfdf; }
 
@@ -91,7 +91,7 @@ section { position: relative; }
 
 .more { float: left; }
 
-.j_box { padding: 20px 0; }
+.j_box { padding-top: 20px; }
 
 .j_box > h2 { font-size: 1.375em; margin-bottom: 15px; }
 
