@@ -22,11 +22,17 @@ abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body,
 }
 
 /*common css*/
+html { font-size:100%;}
 body {
   font-family: "Monk",Microsoft Yahei,Arial, Helvetica, sans-serif;
   font-size: 100%;
 }
 a,a:visited,a:hover,a:active,a:focus { color:$blackColor; outline:none!important; text-decoration:none; }
+ul,li {
+  list-style:none;
+  padding:0;
+  margin:0;
+}
 img {
     height: auto;
     max-width: 100%;
@@ -34,23 +40,33 @@ img {
     border: 0;
     -ms-interpolation-mode: bicubic;
 }
-
+section { position:relative;}
 /*index css*/
 .top { 
   position: relative;
-}
-.top img{
-  width:100%;
-  max-height: 700px;
+  background: url(../images/top.jpg) no-repeat;
+    height: 700px;
+    background-size: cover;
+    background-position: center;
 }
 .top .top_bg { 
   position: absolute; 
   background-color:#000;
-  opacity:0.3;
+  opacity:0.9;
   height:100%;
   top:0px;
   left:0;
   width: 100%;
+}
+.top .title {
+  color:$whiteColor;
+  font-size: 4.375em;
+  text-align: center;
+  margin: 0;
+  position: absolute;
+  bottom: 260px;
+  left: 0;
+  right: 0;
 }
 .nav_link {
   position: absolute;
@@ -69,4 +85,41 @@ img {
   height:6px;
   background-color:$whiteColor;
   margin:0 auto 6px;
+  cursor: pointer;
+}
+.author {
+  width: 300px;
+  height: 300px;
+  border:8px solid $whiteColor;
+  border-radius:100%;
+  margin: -150px auto 30px;
+  overflow: hidden;
+  box-shadow: 0px 10px 30px #666;
+}
+.j_moudel_box {
+  text-align: center;
+  padding-bottom: 60px;
+}
+.j_moudel_box p {
+  margin-bottom: 20px;
+  font-size: 1.125em;
+}
+.share li {
+  display: inline-block;
+}
+.share a{
+  display: inline-block;
+  margin-right: 10px;
+}
+.share a.qq{
+  @include fnIconSprite(icon1);
+}
+.share a.wx{
+  @include fnIconSprite(icon2);
+}
+.share a.wb{
+  @include fnIconSprite(icon3);
+}
+.share a.db{
+  @include fnIconSprite(icon4);
 }
