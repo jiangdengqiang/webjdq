@@ -33,6 +33,13 @@ ul,li {
   padding:0;
   margin:0;
 }
+h1,h2,h3,h4,h5,h6 {
+  margin:0;
+  padding:0;
+}
+input,button{
+  outline: 0;
+}
 img {
     height: auto;
     max-width: 100%;
@@ -96,11 +103,11 @@ section { position:relative;}
   overflow: hidden;
   box-shadow: 0px 10px 30px #666;
 }
-.j_moudel_box {
+.j_moudel_box1 {
   text-align: center;
   padding-bottom: 60px;
 }
-.j_moudel_box p {
+.j_moudel_box1 p {
   margin-bottom: 20px;
   font-size: 1.125em;
 }
@@ -122,4 +129,72 @@ section { position:relative;}
 }
 .share a.db{
   @include fnIconSprite(icon4);
+}
+/*list*/
+.j_moudel_box2 {
+  background-color:#f9f9f9;
+  padding:105px 0 85px;
+}
+.new_list {
+  padding:30px;
+  background-color:$whiteColor;
+  border: 1px solid #e0dfdf;
+  box-shadow: 0px 0 1px #f1f0f0;
+}
+.recommend {
+  background-color:$whiteColor;
+  border:1px solid #e0dfdf;
+}
+.new_recent {
+  padding:0 20px 25px;
+}
+.news_mark {
+  margin-top: 10px;
+}
+.news_mark span{
+  display: inline-block;
+  margin-right:5px;
+}
+.recommend >h2 {
+  padding:15px 0;
+  text-align: center;
+  border-bottom:1px solid #d7d7d7;
+  box-shadow: 0px 0 1px #f1f0f0;
+  margin-bottom: 20px;
+}
+.new_href {
+  display: block;
+}
+.introduction{
+  color:#ed145b
+}
+.point {
+  width: 10px;
+  height:10px;
+  border-radius:100%;
+  background-color:#e0dfdf;
+}
+.j_txt {
+  font-size: 0.875em;
+  margin-top: 6px;
+}
+.search {
+  position:relative;
+  margin-bottom: 25px;
+}
+.search_text {
+  width:100%;
+  border:1px solid #d7d7d7;
+  height:50px;
+  padding:0 80px 0 20px;
+}
+.search_btn {
+  width: 48px;
+  height:48px;
+  background:#ea4c89 url(../images/icon/search.png) no-repeat;
+  background-position:center;
+  border:0;
+  position: absolute;
+  right: 0;
+  top:1px;
 }
