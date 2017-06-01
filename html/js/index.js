@@ -36,9 +36,15 @@
 				colors = color_val[id];
 				return colors;
 			}
-
+		},
+		nav:function(){
+			$(".nav_link").on("click",function(){
+				$(".menu").stop().toggleClass("menu_run");
+				$(this).stop().toggleClass("open");
+			})
 		}
 	}
 	method.scrollHeight();
 	method.heart();
+	method.nav();
 })(jQuery);

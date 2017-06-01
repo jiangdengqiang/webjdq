@@ -40,9 +40,37 @@ section { position: relative; }
 }
 .head_nav.top .title { display: none;
 }*/
-.nav_link { position: absolute; top: 100px; left: 80px; width: 100px; height: 100px; border-radius: 100%; background-color: #000; padding: 34px 0; cursor: pointer; box-shadow: 0px 0px 20px #fff; }
+/*nav*/
+.nav_layer { height: 100%; background-color: #333; opacity: 0.9; z-index: 11; box-shadow: inset 1px 0px 150px #fff; -webkit-box-shadow: inset 1px 0px 150px #fff; -moz-box-shadow: inset 1px 0px 150px #fff; }
 
-.nav_link > span { display: block; width: 30px; height: 6px; background-color: #fff; margin: 0 auto 6px; cursor: pointer; }
+.nav { position: absolute; top: 20%; left: 0; right: 0; z-index: 12; }
+
+.nav a { display: block; text-align: center; font-size: 2.5em; color: #fff; line-height: 1.7; text-shadow: 16px 2px 15px #000; padding: 20px 0; }
+
+.nav_link { position: fixed; top: 100px; right: 80px; width: 100px; height: 100px; border-radius: 100%; background-color: #000; padding: 34px 0; cursor: pointer; box-shadow: 5px 0px 20px #666; z-index: 20; }
+
+.open { background-color: transparent; box-shadow: none; }
+
+.open span:nth-child(2) { display: none; }
+
+.open span:first-child { transform: rotate(-45deg) translate(-25%, 50%); -webkit-transform: rotate(-45deg) translate(-25%, 50%); -moz-transform: rotate(-45deg) translate(-25%, 50%); }
+
+.open span:last-child { transform: rotate(45deg) translate(-15%, -25%); -webkit-transform: rotate(45deg) translate(-15%, -25%); -moz-transform: rotate(45deg) translate(-15%, -25%); }
+
+.menu { position: fixed; top: 0; left: 0; bottom: 0; width: 0; transition: all 0.3s; overflow: hidden; }
+
+.menu.menu_run { width: 100%; display: block; -webkit-animation: menu_run 1s; -moz-animation: menu_run 1s; -ms-animation: menu_run 1s; }
+
+@keyframes menu_run { 0% { transform: rotate3d(10, -15, 0, -90deg); opacity: 0; }
+  50% { transform: rotate3d(0, -15, 0, 30deg); opacity: 0.5; }
+  100% { transform: rotate3d(0, 0, 0, 0deg); opacity: 1; } }
+@-moz-keyframes menu_run { 0% { -moz-transform: rotate3d(10, -15, 0, -90deg); opacity: 0; }
+  50% { -moz-transform: rotate3d(0, -15, 0, 30deg); opacity: 0.5; }
+  100% { -moz-transform: rotate3d(0, 0, 0, 0deg); opacity: 1; } }
+@-webkit-keyframes menu_run { 0% { -webkit-transform: rotate3d(10, -15, 0, -90deg); opacity: 0; }
+  50% { -webkit-transform: rotate3d(0, -15, 0, 30deg); opacity: 0.5; }
+  100% { -webkit-transform: rotate3d(0, 0, 0, 0deg); opacity: 1; } }
+.nav_link > span { display: block; width: 30px; height: 6px; background-color: #fff; margin: 0 auto 6px; cursor: pointer; transition: all 0.3s; -webkit-transition: all 0.3s; -moz-transition: all 0.3s; }
 
 .author { width: 300px; height: 300px; border: 8px solid #fff; border-radius: 100%; margin: -150px auto 30px; overflow: hidden; box-shadow: 0px 10px 30px #666; }
 
@@ -133,7 +161,7 @@ section { position: relative; }
 
 .callback { padding: 10px 20px; background-color: #000; font-size: 2em; text-align: center; color: #fff; position: fixed; bottom: 30px; right: 20px; cursor: pointer; box-shadow: -4px 6px 25px #666; display: none; }
 
-.heart { position: absolute; transform-origin: 100% 8; animation: heart 0.5s infinite linear; -webkit-animation: heart 0.5s infinite linear; -moz-animation: heart 0.5s infinite linear; -ms-animation: heart 0.5s infinite linear; }
+.heart { position: absolute; transform-origin: 50% 8; animation: heart 0.5s infinite linear; -webkit-animation: heart 0.5s infinite linear; -moz-animation: heart 0.5s infinite linear; -ms-animation: heart 0.5s infinite linear; z-index: 100; }
 
 @keyframes heart { 0% { transform: rotate(-45deg); }
   50% { transform: rotate(0deg); }
