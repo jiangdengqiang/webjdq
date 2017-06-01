@@ -15,20 +15,26 @@
 			})
 		},
 		heart:function(){
+			var i = 0;
 			$("body").on("click",function(event){
-				var heart = "<span class='glyphicon glyphicon-heart heart'></span>",
-					res="",
+				i++;
+				var res="",
+					heart = "<span class='glyphicon glyphicon-heart heart num"+i+"'></span>",
 					top = $(document).scrollTop(),
 					y_top = (event || window.event).clientY,
 					x = (event || window.event).clientX,
 					y = y_top+top;
 				$("body").append(heart);
-				location(res);
+				$(".num"+i).css({"color":location(),"top":y,"left":x}).animate({"top":y-80,"opacity":0.6},1000,function(){
+					$(this).remove();
+
+				});
 			})
-			var location  = function(colors){
-				var color_val = ["#99cc33","#ff9933","#ff99cc","#99ccff","#f08080","#8EE5EE","#8470FF","#CD3700","#F5DEB3","#e7afaf"];
-				colors = Math.ceil(Math.random()*10);
-				console.log(colors);
+			var location  = function(){
+				var color_val = ["#99cc33","#ff9933","#ff99cc","#99ccff","#f08080","#8EE5EE","#8470FF","#CD3700","#F5DEB3","#e7afaf"],
+				id = Math.floor(Math.random()*10),
+				colors = color_val[id];
+				return colors;
 			}
 
 		}

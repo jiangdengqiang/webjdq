@@ -133,6 +133,10 @@ section { position: relative; }
 
 .callback { padding: 10px 20px; background-color: #000; font-size: 2em; text-align: center; color: #fff; position: fixed; bottom: 30px; right: 20px; cursor: pointer; box-shadow: -4px 6px 25px #666; display: none; }
 
-.heart { position: absolute; }
+.heart { position: absolute; transform-origin: 100% 8; animation: heart 0.5s infinite linear; -webkit-animation: heart 0.5s infinite linear; -moz-animation: heart 0.5s infinite linear; -ms-animation: heart 0.5s infinite linear; }
+
+@keyframes heart { 0% { transform: rotate(-45deg); }
+  50% { transform: rotate(0deg); }
+  100% { transform: rotate(-45deg); } }
 
 /*# sourceMappingURL=index.css.map */

@@ -330,4 +330,20 @@ section { position:relative;}
 }
 .heart {
   position: absolute;
+  transform-origin:100% 8;
+  animation: heart 0.5s infinite linear;
+  -webkit-animation: heart 0.5s infinite linear;
+  -moz-animation: heart 0.5s infinite linear;
+  -ms-animation: heart 0.5s infinite linear;
+}
+@keyframes heart{
+  0%{
+    transform:rotate(-45deg);
+  }
+  50%{
+    transform:rotate(0deg);
+  }
+  100%{
+    transform:rotate(-45deg);
+  }
 }
