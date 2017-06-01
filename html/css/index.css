@@ -133,4 +133,6 @@ section { position: relative; }
 
 .callback { padding: 10px 20px; background-color: #000; font-size: 2em; text-align: center; color: #fff; position: fixed; bottom: 30px; right: 20px; cursor: pointer; box-shadow: -4px 6px 25px #666; display: none; }
 
+.heart { position: absolute; }
+
 /*# sourceMappingURL=index.css.map */
