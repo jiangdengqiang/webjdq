@@ -18,13 +18,13 @@ $icons-2x: sprite-map("icons-2x/*.png",$spacing: 4px, $layout:smart);
   }
 };
 abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
-    cursor: url(../images/cursor.ico),auto;
+    cursor: url(../images/cursor.ico?__inline),auto;
 }
 
 /*common css*/
 html { font-size:100%;}
 body {
-  font-family: "Monk",Microsoft Yahei,Arial, Helvetica, sans-serif;
+  font-family: "Microsoft Yahei",Arial,Helvetica, sans-serif;
   font-size: 100%;
 }
 a,a:visited,a:hover,a:active,a:focus { color:$blackColor; outline:none!important; text-decoration:none; }
@@ -36,6 +36,9 @@ ul,li {
 h1,h2,h3,h4,h5,h6 {
   margin:0;
   padding:0;
+}
+h1,h2 {
+  font-family: "Monk",Microsoft Yahei,sans-serif;
 }
 input,button{
   outline: 0;
@@ -57,7 +60,7 @@ section { position:relative;}
 /*index css*/
 .top { 
   position: relative;
-  background: url(../images/top.jpg) no-repeat;
+  background: url(../images/top.jpg?__inline) no-repeat;
   height: 700px;
   background-size: cover;
   background-position: center;
@@ -182,6 +185,7 @@ section { position:relative;}
   width: 0;
   transition: all 0.3s;
   overflow: hidden;
+  z-index: 10;
 }
 .menu.menu_run {
   width: 100%;
@@ -346,7 +350,7 @@ section { position:relative;}
 .search_btn {
   width: 48px;
   height:48px;
-  background:#ea4c89 url(../images/icon/search.png) no-repeat;
+  background:#ea4c89 url(../images/icon/search.png?__inline) no-repeat;
   background-position:center;
   border:0;
   position: absolute;

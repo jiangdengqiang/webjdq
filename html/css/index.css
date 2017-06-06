@@ -1,21 +1,23 @@
-@font-face { font-family: 'Monk'; src: url("../fonts/Monk.otf");
+@font-face { font-family: 'Monk'; src: url("../fonts/Monk.otf?__inline");
   /* IE9 Compat Modes */
-src: url("../fonts/Monk.otf?#iefix") format("embedded-opentype"), url("../fonts/monk-webfont.woff2") format("woff2"), url("../fonts/monk-webfont.woff") format("woff"), url("../fonts/Monk.ttf") format("truetype"); font-style: normal; font-weight: normal; text-rendering: optimizeLegibility; }
+src: url("../fonts/Monk.otf?#iefix?__inline") format("embedded-opentype"), url("../fonts/monk-webfont.woff2?__inline") format("woff2"), url("../fonts/monk-webfont.woff?__inline") format("woff"), url("../fonts/Monk.ttf?__inline") format("truetype"); font-style: normal; font-weight: normal; text-rendering: optimizeLegibility; }
 /*
 @mixin bgLinear($Yvalue,$Scolor,$Ecolor) {background-image:-webkit-linear-gradient($Yvalue, $Scolor, $Ecolor); background-image:-moz-linear-gradient($Yvalue,$Scolor, $Ecolor); background-image:-o-linear-gradient($Yvalue,$Scolor, $Ecolor);background-image:-ms-linear-gradient($Yvalue,$Scolor, $Ecolor); filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$Scolor', endColorstr='$Ecolor'); -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='$Scolor', endColorstr='$Ecolor')"; }
 */
-abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video { cursor: url(../images/cursor.ico), auto; }
+abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video { cursor: url(../images/cursor.ico?__inline), auto; }
 
 /*common css*/
 html { font-size: 100%; }
 
-body { font-family: "Monk",Microsoft Yahei,Arial, Helvetica, sans-serif; font-size: 100%; }
+body { font-family: "Microsoft Yahei",Arial,Helvetica, sans-serif; font-size: 100%; }
 
 a, a:visited, a:hover, a:active, a:focus { color: #404042; outline: none !important; text-decoration: none; }
 
 ul, li { list-style: none; padding: 0; margin: 0; }
 
 h1, h2, h3, h4, h5, h6 { margin: 0; padding: 0; }
+
+h1, h2 { font-family: "Monk",Microsoft Yahei,sans-serif; }
 
 input, button { outline: 0; }
 
@@ -26,7 +28,7 @@ section { position: relative; }
 .clear:after, .tags:after { content: ""; clear: both; display: block; height: 0; }
 
 /*index css*/
-.top { position: relative; background: url(../images/top.jpg) no-repeat; height: 700px; background-size: cover; background-position: center; background-attachment: fixed; }
+.top { position: relative; background: url(../images/top.jpg?__inline) no-repeat; height: 700px; background-size: cover; background-position: center; background-attachment: fixed; }
 
 .top .top_bg { position: absolute; background-color: #000; opacity: 0.4; height: 100%; top: 0px; left: 0; width: 100%; }
 
@@ -59,7 +61,7 @@ section { position: relative; }
 
 .open span:last-child { transform: rotate(45deg) translate(-15%, -25%); -webkit-transform: rotate(45deg) translate(-15%, -25%); -moz-transform: rotate(45deg) translate(-15%, -25%); }
 
-.menu { position: fixed; top: 0; left: 0; bottom: 0; width: 0; transition: all 0.3s; overflow: hidden; }
+.menu { position: fixed; top: 0; left: 0; bottom: 0; width: 0; transition: all 0.3s; overflow: hidden; z-index: 10; }
 
 .menu.menu_run { width: 100%; display: block; -webkit-animation: menu_run 1s; -moz-animation: menu_run 1s; -ms-animation: menu_run 1s; }
 
@@ -125,7 +127,7 @@ section { position: relative; }
 
 .search_text { width: 100%; border: 1px solid #d7d7d7; height: 50px; padding: 0 80px 0 20px; }
 
-.search_btn { width: 48px; height: 48px; background: #ea4c89 url(../images/icon/search.png) no-repeat; background-position: center; border: 0; position: absolute; right: 0; top: 1px; }
+.search_btn { width: 48px; height: 48px; background: #ea4c89 url(../images/icon/search.png?__inline) no-repeat; background-position: center; border: 0; position: absolute; right: 0; top: 1px; }
 
 .more { float: left; }
 
