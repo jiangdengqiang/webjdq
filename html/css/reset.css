@@ -1,5 +1,5 @@
-@font-face { font-family: 'Monk'; src: url("../fonts/Monk.otf");
+@font-face { font-family: 'Monk'; src: url("../fonts/Monk.otf?__inline");
   /* IE9 Compat Modes */
-src: url("../fonts/Monk.otf?#iefix") format("embedded-opentype"), url("../fonts/monk-webfont.woff2") format("woff2"), url("../fonts/monk-webfont.woff") format("woff"), url("../fonts/Monk.ttf") format("truetype"); font-style: normal; font-weight: normal; text-rendering: optimizeLegibility; }
+src: url("../fonts/Monk.otf?#iefix?__inline") format("embedded-opentype"), url("../fonts/monk-webfont.woff2?__inline") format("woff2"), url("../fonts/monk-webfont.woff?__inline") format("woff"), url("../fonts/Monk.ttf?__inline") format("truetype"); font-style: normal; font-weight: normal; text-rendering: optimizeLegibility; }
 
 /*# sourceMappingURL=reset.css.map */
