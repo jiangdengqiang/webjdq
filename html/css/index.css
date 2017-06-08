@@ -249,7 +249,7 @@ section { position: relative; }
 
 .like > em { color: #ea4c89; font-weight: bold; }
 
-.no-like > em { color: #404042; font-weight: bold; }
+.no-like > em { color: #404042; font-weight: bold; cursor: pointer; }
 
 .no-like i { color: #404042; }
 
