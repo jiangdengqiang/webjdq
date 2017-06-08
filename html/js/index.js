@@ -41,9 +41,15 @@
 				$(".menu").stop().toggleClass("menu_run");
 				$(this).stop().toggleClass("open");
 			})
+		},
+		link:function(){
+			$(".feel span").click(function(ev){
+				ev.stopPropagation();
+			})
 		}
 	}
 	method.scrollHeight();
 	method.heart();
 	method.nav();
+	method.link();
 })(jQuery);
