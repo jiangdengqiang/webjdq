@@ -159,7 +159,7 @@ section { position: relative; }
 .page li span { display: block; margin-top: 20px; letter-spacing: 2px; margin-left: 4px; }
 
 /*foot*/
-.foot { background-color: #333; padding: 25px 0; }
+.foot { background-color: #404042; padding: 25px 0; }
 
 .copyright { color: #666; font-family: "Microsoft Yahei"; font-size: 0.875em; }
 
@@ -171,6 +171,8 @@ section { position: relative; }
   50% { transform: rotate(0deg); }
   100% { transform: rotate(-45deg); } }
 /*new page*/
+.header { background-color: #404042; }
+
 .new-tip:after { content: ""; clear: both; display: block; height: 0; }
 
 .subtile { margin-top: 40px; font-size: 1.125em; font-weight: bold; }

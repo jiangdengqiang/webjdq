@@ -431,7 +431,7 @@ section { position:relative;}
 }
 /*foot*/
 .foot {
-  background-color: #333;
+  background-color: #404042;
   padding: 25px 0;
 }
 .copyright {
@@ -473,6 +473,7 @@ section { position:relative;}
   }
 }
 /*new page*/
+.header { background-color: #404042;}
 .new-tip:after {
   content:"";
   clear: both;
