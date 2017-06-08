@@ -40,6 +40,9 @@ h1,h2,h3,h4,h5,h6 {
 h1,h2 {
   font-family: "Monk",Microsoft Yahei,sans-serif;
 }
+h2{
+  font-size: 1.5em;
+}
 input,button{
   outline: 0;
 }
@@ -481,7 +484,6 @@ section { position:relative;}
   height:0;
 }
 .subtile {
-  margin-top: 40px;
   font-size: 1.125em;
   font-weight: bold;
 }
@@ -494,8 +496,8 @@ section { position:relative;}
 }
 .myself {
   position: absolute;
-  right: 20px;
-  top:10px;
+  right: 25px;
+  top:25px;
   padding:17px 10px;
   color: #33cc33;
   border-radius: 100%;
@@ -506,5 +508,92 @@ section { position:relative;}
   -moz-transform: rotate(-45deg);
 }
 .news-top {
+  padding:60px 0 20px;
   position: relative;
 }
+.new-time span {
+  font-size: 0.75em;
+  color:#666;
+  margin-right: 5px;
+}
+.new-time {
+  float: left;
+}
+.new-tip {
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f0f0;
+}
+.new-tip:after,.new-page:after{
+  content:"";
+  clear: both;
+  display: block;
+  height:0;
+}
+.new-tip .share_news {
+  margin-top: -6px;
+  font-size: 0.75em;
+}
+.new {
+  position: relative;
+  padding: 120px 100px 80px;
+  border: 1px solid #e0dfdf;
+  margin-bottom: 40px;
+  box-shadow: 0px 0 15px #f1f0f0;
+}
+.new h2 {
+  text-align: center;
+}
+.new-content{
+  padding: 30px 0;
+  text-align: center;
+  min-height: 400px;
+}
+.new-content img {
+  margin-bottom: 20px;
+}
+.new-content p,.new-content span {
+  font-size: 0.875em;
+  line-height: 1.7;
+  text-align: left;
+  text-indent: 24px;
+  color: #666;
+}
+.new-content table {
+  width: 100%;
+  text-align: center;
+  border: 1px solid #e0dfdf;
+  margin: 20px 0;
+}
+.new-content table th {
+  text-align: center;
+  padding: 6px 0;
+  border-bottom: 1px solid #e0dfdf;
+}
+.new-content table td {
+  padding:6px 0;
+  border-bottom: 1px solid #e0dfdf;
+}
+.new-content table tr:nth-child(odd) td{
+  background-color: #eee;
+}
+.new-content table tr:last-child td {
+  border-bottom: 0;
+}
+.new-page {
+  padding: 10px 0;
+  border-bottom: 1px solid #e0dfdf;
+}
+.new-page a,.new-page a>span{
+  cursor: pointer;
+}
+.new-page a:hover {
+  color:#33cc33;
+}
+.new-page .new-prev {
+  float: left;
+}
+.new-page .new-next {
+  float: right;
+}
+
