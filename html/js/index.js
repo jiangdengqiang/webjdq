@@ -2,8 +2,7 @@
 	var method = {
 		scrollHeight:function(){
 			$(window).scroll( function() {
-				var _top = $(document).scrollTop(),
-					_height = $(".author").offset().top;
+				var _top = $(document).scrollTop();
 				if(_top>0){
 					$(".callback").fadeIn();
 				}else {
