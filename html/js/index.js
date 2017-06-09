@@ -45,7 +45,6 @@
 		link:function(){
 			$(".feel span").click(function(ev){
 				ev.stopPropagation();
-				alert(1);
 			})
 		}
 	}
