@@ -53,7 +53,7 @@ section { position: relative; }
 
 /*.nav a:after{ position: absolute; top:0; left:0; content:"My blog sprce"; display: block; text-align: center; font-size: 1em; color: #ea4c89; line-height: 1.7; text-shadow: 16px 2px 15px #000; padding: 20px 0; width: 100%;
 }*/
-.nav_link { position: fixed; top: 100px; right: 80px; width: 100px; height: 100px; border-radius: 100%; background-color: #000; padding: 34px 0; cursor: pointer; box-shadow: 5px 0px 20px #666; z-index: 20; }
+.nav_link { position: fixed; top: 60px; right: 40px; width: 100px; height: 100px; border-radius: 100%; background-color: #000; padding: 34px 0; cursor: pointer; box-shadow: 5px 0px 20px #666; z-index: 20; }
 
 .open { background-color: transparent; box-shadow: none; }
 
