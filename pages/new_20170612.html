@@ -1,0 +1,206 @@
+<html>
+<head>
+{% include "../templates/layouts/head.html" %}
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css?__inline">
+<link rel="stylesheet" href="css/index.css"/>
+<title>JS中的prototype</title>
+</head>
+<body class="new-bg">
+    {% include "../templates/layouts/nav.html" %}
+<!--    <div class="header">
+        <div class="container">
+            <a href="#"><img src="images/logo.png"/></a>
+            <div class="user">
+                <a href="#">注册</a>
+                <a href="#">登录</a>
+            </div>
+        </div>
+    </div>-->
+    <div class="container fadeInRight">
+        <div class="clearfix news-top">
+            <h3 class="subtile">新闻动态<span>NEWS</span></h3>
+        </div>
+        <div class="new">
+            <h2>JS中的prototype</h2>
+            <span class="myself reprint">转载</span>
+            <div class="new-tip">
+                <div class="new-time"><span>发布于：2017-06-12  10:42</span><span>浏览：305</span></div>
+                <div class="share_news">
+                    <span>分享到：</span>
+                    <a href="#" class="qq" title="分享给QQ好友"><i></i></a>
+                    <a href="#" class="qqkj" title="分享到QQ空间"><i></i></a>
+                    <a href="#" class="wx" title="分享到微信"><i></i></a>
+                    <a href="#" class="wb" title="分享到微博"><i></i></a>
+                </div>
+            </div>
+            <div class="new-content">
+                <div>JS中的phototype是JS中比较难理解的一个部分
+                    <br> <br>
+                    本文基于下面几个知识点:
+                    <br><br>
+                    <h3>1 原型法设计模式</h3>
+                    <br>
+                    在.Net中可以使用clone()来实现原型法
+                    <br><br>
+                    原型法的主要思想是，现在有1个类A,我想要创建一个类B,这个类是以A为原型的,并且能进行扩展。我们称B的原型为A。
+                    <br><br>
+                    <h3>2 javascript的方法可以分为三类：</h3>
+                    <br>
+                    a 类方法
+                    <br><br>
+                    b 对象方法
+                    <br><br>
+                    c 原型方法
+                    <br><br>
+                    例子：
+                    <br>
+                </div>
+                <div class="code">
+                    <span class="modus">function</span> People(name){
+                    <br>
+                        <span class="modus">&nbsp;&nbsp;this</span>.name=name;
+                    <br>
+                    <span class="zs">//对象方法</span>
+                    <br>
+                        <span class="modus">&nbsp;&nbsp;this</span>.Introduce=<span class="modus">function</span>(){
+                    <br>
+                    &nbsp;&nbsp;alert("My name is "+this.name);
+                    <br>
+                    &nbsp;&nbsp;}
+                    <br>
+                    }
+                    <br>
+                    <span class="zs">//类方法</span>
+                    <br>
+                    People.Run=<span class="modus">function</span>(){
+                    <br>
+                    &nbsp;&nbsp;alert("I can run");
+                    <br>
+                    }
+                    <br>
+                    <span class="zs">//原型方法</span>
+                    <br>
+                    People.prototype.IntroduceChinese=<span class="modus">function</span>(){
+                    <br>&nbsp;&nbsp;
+                    alert("我的名字是"+this.name);
+                    <br>
+                    }
+                    <br>
+                    <span class="zs">//测试</span>
+                    <br>
+                    <span class="modus">var</span> p1=<span class="modus">new</span> People("Windking");
+                    <br>
+                    p1.Introduce();
+                    <br>
+                    People.Run();
+                    <br>
+                    p1.IntroduceChinese();
+                </div>
+                <h3> obj1.func.call(obj)方法</h3><br>
+                意思是将obj看成obj1,调用func方法<br><br>
+                好了，下面一个一个问题解决：<br><br>
+                <h3>prototype是什么含义？</h3><br>
+                javascript中的每个对象都有prototype属性，Javascript中对象的prototype属性的解释是：返回对象类型原型的引用。<br><br>
+                A.prototype = new B();<br><br>
+                理解prototype不应把它和继承混淆。A的prototype为B的一个实例，可以理解A将B中的方法和属性全部克隆了一遍。A能使用B的方法和属性。这里强调的是克隆而不是继承。可以出现这种情况：A的prototype是B的实例，同时B的prototype也是A的实例。<br><br>
+                先看一个实验的例子：<br><br>
+                <div class="code">
+                    <span class="modus">function</span> baseClass(){<br>
+                    <span class="modus">&nbsp;&nbsp;this</span>.showMsg = <span class="modus">function</span>(){<br>
+                    &nbsp;&nbsp;alert("baseClass::showMsg");<br>
+                    &nbsp;&nbsp;}<br>
+                    }<br>
+                    <span class="modus">function</span> extendClass(){<br>
+                    }<br>
+                    extendClass.prototype = <span class="modus">new</span> baseClass();<br>
+                    <span class="modus">var</span> instance = <span class="modus">new</span> extendClass();<br>
+                    instance.showMsg(); <span class="zs">// 显示baseClass::showMsg</span>
+                </div>
+                我们首先定义了baseClass类，然后我们要定义extentClass，但是我们打算以baseClass的一个实例为原型，来克隆的extendClass也同时包含showMsg这个对象方法。
+                extendClass.prototype = new baseClass()就可以阅读为：extendClass是以baseClass的一个实例为原型克隆创建的。<br><br>
+                那么就会有一个问题，如果extendClass中本身包含有一个与baseClass的方法同名的方法会怎么样？<br><br>
+                下面是扩展实验2：
+                <div class="code">
+                    <span class="modus">function</span> baseClass(){<br>
+                    <span class="modus">&nbsp;&nbsp;this</span>.showMsg = <span class="modus">function</span>(){<br>
+                    &nbsp;alert("baseClass::showMsg");<br>
+                    &nbsp;}<br>
+                    }<br>
+                    <span class="modus">function</span> extendClass(){<br>
+                    <span class="modus">&nbsp;&nbsp;this</span>.showMsg =<span class="modus">function</span> (){<br>
+                    &nbsp;&nbsp;alert("extendClass::showMsg");<br>&nbsp;&nbsp;
+                    }<br>
+                    }<br>
+                    extendClass.prototype = <span class="modus">new</span> baseClass();<br>
+                    <span class="modus">var</span> instance = <span class="modus">new</span> extendClass();<br>
+                    instance.showMsg();<span class="zs">//显示extendClass::showMsg</span><br>
+                </div>
+                实验证明：函数运行时会先去本体的函数中去找，如果找到则运行，找不到则去prototype中寻找函数。或者可以理解为prototype不会克隆同名函数。
+                那么又会有一个新的问题：<br><br>
+                如果我想使用extendClass的一个实例instance调用baseClass的对象方法showMsg怎么办？<br><br>
+                答案是可以使用call:
+                <div class="code">
+                    extendClass.prototype = <span class="modus">new</span> baseClass();<br>
+                    <span class="modus">var</span> instance = <span class="modus">new</span> extendClass();<br>
+                    <span class="modus">var</span> baseinstance = <span class="modus">new</span> baseClass();<br>
+                    baseinstance.showMsg.call(instance);<span class="zs">//显示baseClass::showMsg</span>
+                </div>
+                这里的baseinstance.showMsg.call(instance);阅读为“将instance当做baseinstance来调用，调用它的对象方法showMsg”<br><br>
+                好了，这里可能有人会问，为什么不用baseClass.showMsg.call(instance);<br><br>
+                这就是对象方法和类方法的区别，我们想调用的是baseClass的对象方法<br><br>
+                最后，下面这个代码如果理解清晰，那么这篇文章说的就已经理解了：<br><br>
+                <div class="code">
+                    <span><</span><span>script type="text/javascript"</span><span>></span><br>
+                        <span class="modus">function</span> baseClass(){<br>
+                            <span class="modus">&nbsp;&nbsp;this</span>.showMsg = <span class="modus">function</span>(){<br>
+                            &nbsp;&nbsp;alert("baseClass::showMsg");<br>
+                            &nbsp;&nbsp;}<br>
+                            <span class="modus">&nbsp;&nbsp;this</span>.baseShowMsg = <span class="modus">function</span>(){<br>
+                            &nbsp;&nbsp;alert("baseClass::baseShowMsg");<br>
+                            &nbsp;&nbsp;}<br>}<br>
+                        baseClass.showMsg = <span class="modus">function</span>(){<br>
+                            &nbsp;&nbsp;alert("baseClass::showMsg static");<br>
+                        }<br>
+                        <span class="modus">function</span> extendClass(){<br>
+                            <span class="modus">&nbsp;&nbsp;this</span>.showMsg =<span class="modus">function</span>(){<br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;alert("extendClass::showMsg");<br>&nbsp;&nbsp;
+                            }<br>
+                        }<br>
+                        extendClass.showMsg = <span class="modus">function</span>(){<br>&nbsp;&nbsp;
+                            alert("extendClass::showMsg static")<br>
+                        }<br>
+                        extendClass.prototype = <span class="modus">new</span> baseClass();<br>
+                        <span class="modus">var</span> instance = <span class="modus">new</span> extendClass();<br>
+                        instance.showMsg(); <span class="zs">//显示extendClass::showMsg</span><br>
+                        instance.baseShowMsg(); <span class="zs">//显示baseClass::baseShowMsg</span><br>
+                        instance.showMsg(); <span class="zs">//显示extendClass::showMsg</span><br>
+                        baseClass.showMsg.call(instance);<span class="zs">//显示baseClass::showMsg static</span><br>
+                        <span class="modus">var</span> baseinstance = <span class="modus">new</span> baseClass();<br>
+                        baseinstance.showMsg.call(instance);<span class="zs">//显示baseClass::showMsg</span><br>
+                    <span><</span><span>script></span>
+                </div>
+                <br><br>
+                作者：轩脉刃(yjf512)
+                <br>
+                出处：（<a href="http://www.cnblogs.com/yjf512/" class="modus">http://www.cnblogs.com/yjf512/</a>）
+                <br>
+                版权声明：本文的版权归作者与博客园共有。欢迎转载阅读，转载时须注明本文的详细链接。<br><br>
+                [参考文章]<br><br>
+                <a class="modus" href="http://tech.ddvip.com/2009-05/1243588303121461.html">http://tech.ddvip.com/2009-05/1243588303121461.html</a><br><br>
+                <a class="modus" href="http://jetway.iteye.com/blog/56533"> http://jetway.iteye.com/blog/56533</a><br><br>
+            </div>
+            <div class="clearfix feel">
+                <span class="like">被赞数:<i class="glyphicon glyphicon-heart-empty"></i><em>300</em></span>
+                <span class="no-like">被黑数:<i class="glyphicon glyphicon-thumbs-down"></i><em>123</em></span>
+            </div>
+            <div class="new-page">
+                <a href="javascript:;" class="new-prev no-new" disabled="disabled">上一篇:<span>无</span></a>
+                <a href="#" class="new-next">下一篇:<span>Nic设计助力我开始打造新型的互联网络平台</span></a>
+            </div>
+        </div>
+    </div>
+    {% include "../templates/layouts/footer.html" %}
+</body>
+{% include "../templates/partials/js.html" %}
+<script type="text/javascript" src="js/index.js"></spanscript>
+</html>
