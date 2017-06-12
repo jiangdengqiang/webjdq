@@ -1,41 +1,18 @@
 <html>
 <head>
-	<!--head-->
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-<meta name="apple-mobile-web-app-capable" content="no"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
-<meta name="keywords" content="蒋登强的个人博客，与前端爱好者共同进步的网站，学习各种前端框架,分享前端干货的空间博客。"/>
-<meta name="description" content="蒋登强的个人博客，与前端爱好者共同进步的网站，互相学习，让初学者能看到易学易懂的代码，让中级前端偶尔能开阔一下视野，让高级前端在这里能够轻松体验。"/>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css?__inline">
-<link rel="stylesheet" href="css/index.css?__inline"/>
+	{% include "../templates/layouts/head.html" %}
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css?__inline">
+<link rel="stylesheet" href="../css/index.css?__inline"/>
 <title>蒋登强的博客</title>
 </head>
 <body>
-	<!--nav-->
-<div class="nav_link">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-<div class="menu">
-    <div class="nav_layer"></div>
-    <nav class="nav">
-        <a href="index.html">My blog sprce</a>
-        <a href="#">Jquery application</a>
-        <a href="#">About me</a>
-        <a href="#">Other frame</a>
-    </nav>
-</div>
-</div>
-
+	{% include "../templates/layouts/nav.html" %}
 	<header class="top">
 		<div class="top_bg"></div>
 		<h1 class="title">My blog space</h1>
 	</header>
 	<section class="j_moudel_box1">
-		<div class="author"><img src="images/autor.jpg?__inline"></div>
+		<div class="author"><img src="../images/autor.jpg?__inline"></div>
 		<div class="container">
 			<p class="j_dec">锲而舍之，朽木不折；锲而不舍，金石可镂。</p>
 			<p>498593805@qq.com</p>
@@ -53,7 +30,7 @@
 				<div class="col-md-8">
 					<div class="j_new">
 						<div class="new_list">
-							<img src="images/list1.jpg?__inline" />
+							<img src="../images/list1.jpg?__inline" />
 							<div class="news_mark">
 								<span>Inspiration</span>
 								<span class="point"></span>
@@ -63,7 +40,7 @@
 								<h2>什么是web前端？</h2>
 								<p>The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable...</p>
 								<div class="clear news_end">
-									<a href="new/news.html" class="more">查看更多</a>
+									<a href="../new/news.html" class="more">查看更多</a>
 									<div class="share_news">
 										<span>分享到：</span>
 										<a href="#" class="qq" title="分享给QQ好友"><i></i></a>
@@ -75,7 +52,7 @@
 							</div>
 						</div>
 						<div class="new_list">
-							<img src="images/list4.jpg?__inline" />
+							<img src="../images/list4.jpg?__inline" />
 							<div class="news_mark">
 								<span>Inspiration</span>
 								<span class="point"></span>
@@ -97,7 +74,7 @@
 							</div>
 						</div>
 						<div class="new_list">
-							<img src="images/list6.jpg?__inline" />
+							<img src="../images/list6.jpg?__inline" />
 							<div class="news_mark">
 								<span>Inspiration</span>
 								<span class="point"></span>
@@ -155,8 +132,8 @@
 					<div class="recommend">
 						<h2>Recent Post</h2>
 						<div class="new_recent">
-							<a class="new_href" href="new/new_20170612.html">
-								<span><img src="images/new20170612.jpg" /></span>
+							<a class="new_href" href="../new/new_20170612.html">
+								<span><img src="../images/new20170612.jpg" /></span>
 								<div class="news_mark">
 									<span class="introduction">文章</span>
 									<span class="point"></span>
@@ -167,7 +144,7 @@
 						</div>
 						<div class="new_recent">
 							<a class="new_href" href="#">
-								<span><img src="images/list3.jpg?__inline" /></span>
+								<span><img src="../images/list3.jpg?__inline" /></span>
 								<div class="news_mark">
 									<span class="introduction">Inspiration</span>
 									<span class="point"></span>
@@ -178,7 +155,7 @@
 						</div>
 						<div class="new_recent">
 							<a class="new_href" href="#">
-								<span><img src="images/list5.jpg?__inline" /></span>
+								<span><img src="../images/list5.jpg?__inline" /></span>
 								<div class="news_mark">
 									<span class="introduction">Inspiration</span>
 									<span class="point"></span>
@@ -192,15 +169,8 @@
 			</div>
 		</div>
 	</section>
-	<!--footer-->
-<footer class="foot">
-    <div class="container">
-        <div class="copyright">All Copyright Reserved©蒋登强的博客2017</div>
-    </div>
-</footer>
-<div class="callback" title="返回顶部">∧</div>
+	{% include "../templates/layouts/footer.html" %}
 </body>
-<!-- javascript -->
-<script type="text/javascript" src="js/jquery-1.8.3.js?__inline"></script>
-<script type="text/javascript" src="js/index.js?__inline"></script>
+{% include "../templates/partials/js.html" %}
+<script type="text/javascript" src="../js/index.js?__inline"></script>
 </html>

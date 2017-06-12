@@ -109,7 +109,9 @@ section { position: relative; }
 
 .recommend { background-color: #fff; border: 1px solid #e0dfdf; margin-bottom: 25px; }
 
-.new_recent { padding: 0 20px 25px; }
+.new_recent { padding: 0 20px 25px; border-bottom: 1px solid #e0dfdf; margin-bottom: 20px; }
+
+.new_recent:last-child { border-bottom: 0; }
 
 .news_mark { margin-top: 10px; }
 
@@ -118,6 +120,12 @@ section { position: relative; }
 .recommend > h2 { padding: 15px 0; text-align: center; border-bottom: 1px solid #d7d7d7; box-shadow: 0px 0 1px #f1f0f0; margin-bottom: 20px; }
 
 .new_href { display: block; }
+
+.new_href:hover img { transform: scale(1.1); transform: scale(1.1); -moz-transform: scale(1.1); }
+
+.new_href img { cursor: pointer; transition: all 0.5s; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; }
+
+.new_href > span { display: block; overflow: hidden; }
 
 .introduction { color: #ed145b; }
 

@@ -1,35 +1,12 @@
 <html>
 <head>
-<!--head-->
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-<meta name="apple-mobile-web-app-capable" content="no"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
-<meta name="keywords" content="蒋登强的个人博客，与前端爱好者共同进步的网站，学习各种前端框架,分享前端干货的空间博客。"/>
-<meta name="description" content="蒋登强的个人博客，与前端爱好者共同进步的网站，互相学习，让初学者能看到易学易懂的代码，让中级前端偶尔能开阔一下视野，让高级前端在这里能够轻松体验。"/>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css?__inline">
-<link rel="stylesheet" href="css/index.css"/>
+{% include "../templates/layouts/head.html" %}
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css?__inline">
+<link rel="stylesheet" href="../css/index.css"/>
 <title>新闻详细页面</title>
 </head>
 <body class="new-bg">
-    <!--nav-->
-<div class="nav_link">
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
-<div class="menu">
-    <div class="nav_layer"></div>
-    <nav class="nav">
-        <a href="index.html">My blog sprce</a>
-        <a href="#">Jquery application</a>
-        <a href="#">About me</a>
-        <a href="#">Other frame</a>
-    </nav>
-</div>
-</div>
-
+    {% include "../templates/layouts/nav.html" %}
 <!--    <div class="header">
         <div class="container">
             <a href="#"><img src="images/logo.png"/></a>
@@ -57,7 +34,7 @@
                 </div>
             </div>
             <div class="new-content">
-                <img src="images/news1.jpg"/>
+                <img src="../images/news1.jpg"/>
                 <p>Nic 设计助力我开始打造新型的互动网络平台，为我开始提供平台设计解决方案，权力助力我开始进军移动互联网领域。敬请期待！</p>
                 <p>"我开始"是一个新型的互动网络平台，鼓励人们积极开创健康向上的美好生活。</p>
                 <p>"我开始"由一只国际文化的精英团队组建。我们对健康事业身体力行，充满激情和信心。我们捕捉全球前沿的健康咨询。我们立足全国，力争打造中国健身行业的方向标，我们就是"我开始"！</p>
@@ -95,15 +72,8 @@
             </div>
         </div>
     </div>
-    <!--footer-->
-<footer class="foot">
-    <div class="container">
-        <div class="copyright">All Copyright Reserved©蒋登强的博客2017</div>
-    </div>
-</footer>
-<div class="callback" title="返回顶部">∧</div>
+    {% include "../templates/layouts/footer.html" %}
 </body>
-<!-- javascript -->
-<script type="text/javascript" src="js/jquery-1.8.3.js?__inline"></script>
-<script type="text/javascript" src="js/index.js"></script>
+{% include "../templates/partials/js.html" %}
+<script type="text/javascript" src="../js/index.js"></script>
 </html>
