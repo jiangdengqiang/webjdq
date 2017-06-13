@@ -1,5 +1,6 @@
 ﻿;(function($){
 	var method = {
+/*返回顶部*/
 		scrollHeight:function(){
 			$(window).scroll( function() {
 				var _top = $(document).scrollTop();
@@ -13,6 +14,7 @@
 				$("body,html").animate({scrollTop:"0px"},500);
 			})
 		},
+/*点击心心*/
 		heart:function(){
 			var i = 0;
 			$("body").on("click",function(event){
@@ -36,20 +38,41 @@
 				return colors;
 			}
 		},
+/*导航栏*/
 		nav:function(){
 			$(".nav_link").on("click",function(){
 				$(".menu").stop().toggleClass("menu_run");
 				$(this).stop().toggleClass("open");
 			})
 		},
+/*点赞（正在开发中）*/
 		link:function(){
 			$(".feel span").click(function(ev){
 				ev.stopPropagation();
 			})
+		},
+/*分享按钮*/
+		share:function(){
+			window._bd_share_config={
+				"common":{
+					"bdSnsKey":{},
+					"bdText":"",
+					"bdMini":"2",
+					"bdPic":"www.jdqhy299.com/webjdq/html/images/logo.png",
+					"bdMiniList":false,
+					"bdStyle":"1",
+					"bdSize":"32"
+				},
+				"share" : [
+				],
+			};
+			//with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+			with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
 		}
 	}
 	method.scrollHeight();
 	method.heart();
 	method.nav();
 	method.link();
+	method.share();
 })(jQuery);

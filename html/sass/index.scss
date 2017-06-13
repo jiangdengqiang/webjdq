@@ -645,7 +645,7 @@ section { position:relative;}
 @keyframes fadeInRight{
   0%{
     transform: translate(150px,0);
-    filter: blur(5px);
+    filter: blur(3px);
     opacity: 0;
   }
   100%{
@@ -657,7 +657,7 @@ section { position:relative;}
 @-webkit-keyframes fadeInRight{
   0%{
     -webkit-transform: translate(150px,0);
-    -webkit-filter: blur(5px);
+    -webkit-filter: blur(3px);
     opacity: 0;
   }
   100%{
@@ -669,7 +669,7 @@ section { position:relative;}
 @-moz-keyframes fadeInRight{
   0%{
     -moz-transform: translate(150px,0);
-    -moz-ilter: blur(5px);
+    -moz-ilter: blur(3px);
     opacity: 0;
   }
   100%{
