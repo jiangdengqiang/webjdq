@@ -187,6 +187,16 @@ section { position: relative; }
 
 .new-tip:after { content: ""; clear: both; display: block; height: 0; }
 
+.header .logo { display: block; width: 75px; float: left; padding: 20px 0; }
+
+.user { float: right; }
+
+.user .login { background-color: #ea4c89; }
+
+.user a { color: #fff; font-size: 1em; margin-left: 20px; padding: 62px 30px 63px; float: left; transition: all 0.5s; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; }
+
+.user a i { margin-right: 6px; }
+
 .subtile { font-size: 1.125em; font-weight: bold; }
 
 .subtile > span { margin-left: 6px; font-weight: normal; color: #666; font-size: 0.875em; font-style: italic; }
