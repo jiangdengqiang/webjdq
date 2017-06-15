@@ -183,17 +183,23 @@ section { position: relative; }
   50% { transform: rotate(0deg); }
   100% { transform: rotate(-45deg); } }
 /*new page*/
-.header { background-color: #404042; }
+.header { background-color: #000; }
 
 .new-tip:after { content: ""; clear: both; display: block; height: 0; }
 
-.header .logo { display: block; width: 75px; float: left; padding: 20px 0; }
+.header .logo { display: block; width: 75px; float: left; padding: 10px 0; }
 
 .user { float: right; }
 
 .user .login { background-color: #ea4c89; }
 
-.user a { color: #fff; font-size: 1em; margin-left: 20px; padding: 62px 30px 63px; float: left; transition: all 0.5s; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; }
+.user .login:hover { box-shadow: 0px 4px 12px #999; background-color: #ed145b; padding: 62px 30px 43px; }
+
+.user .register { position: relative; }
+
+.user .register:hover { color: #ea4c89; }
+
+.user a { color: #fff; font-size: 1em; padding: 52px 30px 53px; float: left; transition: all 0.5s; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; }
 
 .user a i { margin-right: 6px; }
 
@@ -209,13 +215,15 @@ section { position: relative; }
 
 .new-time span { font-size: 0.75em; color: #666; margin-right: 5px; }
 
-.new-time { float: left; }
+.new-time { float: left; margin-top: 2px; }
 
 .new-tip { margin-top: 20px; padding-bottom: 10px; border-bottom: 1px solid #f1f0f0; }
 
 .new-tip:after, .new-page:after { content: ""; clear: both; display: block; height: 0; }
 
 .new-tip .share_news { margin-top: -6px; font-size: 0.75em; }
+
+.share_news > span { float: left; margin-top: 8px; }
 
 .new { position: relative; padding: 120px 100px 80px; border: 1px solid #e0dfdf; margin-bottom: 40px; box-shadow: 0px 0 15px #f1f0f0; background-color: #fff; }
 
@@ -291,8 +299,10 @@ section { position: relative; }
 
 .code .zs, .new-content .zs { color: #33cc33; }
 
-.new h2 { font-family: "Microsoft Yahei",sans-serif; }
+.new h2 { font-family: "Microsoft Yahei",sans-serif; font-weight: bold; }
 
 .new-content h3 { font-size: 1.125em; font-weight: bold; text-shadow: 2px 0px 6px #ea4c89; }
+
+#bdshare_weixin_qrcode_dialog.bd_weixin_popup { height: auto !important; }
 
 /*# sourceMappingURL=index.css.map */
