@@ -3,6 +3,7 @@ var compass = require('gulp-compass');
 var uglify = require('gulp-uglify');//用于压缩js
 var minifyCSS = require('gulp-minify-css');//用于压缩css
 var nunjucks = require('gulp-nunjucks-render');
+var rev = require('gulp-rev'); //md5
 
 //scss文件生成css
 gulp.task('compass', function() {
@@ -50,5 +51,15 @@ gulp.task('css', function () {
 gulp.task('watch', function() {
     gulp.watch('./html/sass/*.scss', ['compass']);
 });
+gulp.task('rev', function () {
+    // by default, gulp would pick `assets/css` as the base,
+    // so we need to set it explicitly:
+    return gulp.src(['./html/css/*.scss', './html/js/*.js'], {base: 'html'})
+        .pipe(gulp.dest('./html/css'))  // copy original assets to build dir
+        .pipe(rev())
+        .pipe(gulp.dest('./html/js'))  // write rev'd assets to build dir
+        .pipe(rev.manifest())
+        .pipe(gulp.dest('./html/js')); // write manifest to build dir
+});
 
-gulp.task('default', ['compass, nunjucks, watch']);
+gulp.task('default', ['compass, nunjucks, watch, rev']);

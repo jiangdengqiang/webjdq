@@ -66,8 +66,25 @@
 				"share" : [
 				],
 			};
-			//with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
 			with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+		},
+/*link*/
+		hrefLink:function(){
+			var url = window.location.href;
+			if (url.indexOf("?") != -1) {
+				strs = url.split("?")[1].split("=")[1];
+				$.ajax({
+					url: "../data/new.json",
+					dataType:"json",
+					success: function(data){
+						$(".new-content").html(data[0].msg);
+					},
+					error:function(){
+						alert("此新闻已经被删除");
+					}
+
+				});
+			}
 		}
 	}
 	method.scrollHeight();
@@ -75,4 +92,7 @@
 	method.nav();
 	method.link();
 	method.share();
+	$(window).load(function(){
+		method.hrefLink();
+	})
 })(jQuery);
