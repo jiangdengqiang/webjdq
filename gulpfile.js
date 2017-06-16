@@ -51,15 +51,15 @@ gulp.task('css', function () {
 gulp.task('watch', function() {
     gulp.watch('./html/sass/*.scss', ['compass']);
 });
-gulp.task('rev', function () {
+/*gulp.task('rev', function () {
     // by default, gulp would pick `assets/css` as the base,
     // so we need to set it explicitly:
-    return gulp.src(['./html/css/*.scss', './html/js/*.js'], {base: 'html'})
+    return gulp.src(['./html/css/!*.scss', './html/js/!*.js'], {base: 'html'})
         .pipe(gulp.dest('./html/css'))  // copy original assets to build dir
         .pipe(rev())
         .pipe(gulp.dest('./html/js'))  // write rev'd assets to build dir
         .pipe(rev.manifest())
         .pipe(gulp.dest('./html/js')); // write manifest to build dir
-});
+});*/
 
 gulp.task('default', ['compass, nunjucks, watch, rev']);
