@@ -71,13 +71,28 @@
 /*link*/
 		hrefLink:function(){
 			var url = window.location.href;
-			if (url.indexOf("?") != -1) {
+			if (url.indexOf("?id") != -1) {
 				strs = url.split("?")[1].split("=")[1];
 				$.ajax({
 					url: "../data/new.json",
 					dataType:"json",
 					success: function(data){
-						$(".new-content").html(data[0].msg);
+						$.each(data,function(i){
+							if(strs.indexOf("#")!=-1){
+								strs = strs.substring(0,strs.indexOf("#"));
+							}
+							if(strs == data[i].id){
+								var w=url.indexOf("id");
+								var NewUrl = url.substring(0,w);
+								$("title").html(data[i].title);
+								$(".new-content").html(data[i].msg);
+								$(".new h2").html(data[i].title);
+								$(".myself").html(data[i].from);
+								data[i].from == "转载"?$(".myself").addClass("reprint"):false;
+								data[i].id-1>0?$(".new-prev span").html(data[i-1].title)&&$(".new-prev").attr("href",NewUrl+"id="+data[i-1].id):$(".new-prev span").html("没有了")&&$(".new-prev").attr("href","javascript:;");
+								data[i].id+1<=data.length?$(".new-next span").html(data[i+1].title)&&$(".new-next").attr("href",NewUrl+"id="+data[i+1].id):$(".new-next span").html("没有了")&&$(".new-next").attr("href","javascript:;");
+							}
+						})
 					},
 					error:function(){
 						alert("此新闻已经被删除");
