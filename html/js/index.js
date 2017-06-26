@@ -116,9 +116,9 @@
 				'switchBtn':true,//是否显示左右按钮
 				'numBtn':true,//是否显示数字按钮
 				'eventMode':'',//轮播的启动事件
-				'auto':false,//是否启动自动轮播
+				'auto':true,//是否启动自动轮播
 				'loop':true,//是否循环轮播
-				'pause':20000,//自动轮播时停留时间
+				'pause':2000,//自动轮播时停留时间
 				'width':400,//图片大小-宽度
 				'height':''//图片大小-高度
 			};
@@ -207,6 +207,6 @@
 	})
 	$(window).load(function(){
 		method.hrefLink();
-		$(".jdqslider").jdqSlider({'width':300});
+		$(".jdqslider").jdqSlider({'width':400});
 	})
 })(jQuery);
