@@ -319,4 +319,8 @@ section { position: relative; }
 
 .jdqslider .btn_r { right: 10px; }
 
+.imgbtn li { width: 10px; height: 10px; background-color: #888; border-radius: 50%; display: inline-block; margin: 0px 3px; cursor: pointer; }
+
+.imgbtn li.active { background-color: #ff6a00; }
+
 /*# sourceMappingURL=index.css.map */

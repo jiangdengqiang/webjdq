@@ -113,11 +113,12 @@
 			var defaults = {
 				'el':'.img',//图片的外层
 				'speed':500,//动画执行的时间
-				'switchBtn':false,//是否显示左右按钮
+				'switchBtn':true,//是否显示左右按钮
 				'numBtn':true,//是否显示数字按钮
 				'eventMode':'',//轮播的启动事件
-				'auto':true,//是否启动自动轮播
-				'pause':2000,//自动轮播时停留时间
+				'auto':false,//是否启动自动轮播
+				'loop':true,//是否循环轮播
+				'pause':20000,//自动轮播时停留时间
 				'width':400,//图片大小-宽度
 				'height':''//图片大小-高度
 			};
@@ -127,16 +128,21 @@
 					imgLen = $this.find("img"),
 					j=0,
 					maxWidth = opts.width*(imgLen.length+1),
-					clone = $(opts.el).find("li").first().clone(),//克隆第一张图片
+					length = $(opts.el).find("li").length,
+					clone = $(opts.el).find("li").first().css({"width":opts.width,"float":"left"}).clone(),//克隆第一张图片
 					size = $(opts.el).find("li").size(),
+					numlist=[],
 					common = new function(){
-						this.imgNum = function(){
-							return '<ul class="imgbtn" style="position:absolute;left:-200px;top:-200px;z-index:2;display:none;" ></ul>';
+						this.imgNum = function(list){
+							return '<ul class="imgbtn" style="position:absolute;left:50%;bottom:20px;z-index:2;" >'+list+'</ul>';
 						},
 						this.btn = '<div class="btn btn_l">&lt;</div><div class="btn btn_r">&gt;</div>'
 					};
-				$(opts.el).append(clone);//复制到列表最后
-				if(opts.numBtn){
+				if(opts.loop){
+					$(opts.el).append(clone);//复制到列表最后
+					size = $(opts.el).find("li").size();
+				}
+				if(opts.switchBtn){
 					$(common.btn).appendTo(this);
 					$('.btn_l').on('click',function(ev){
 						ev.stopPropagation();
@@ -150,7 +156,7 @@
 					})
 				}
 				function move(){
-					if (j == size+1) {
+					if (j == size) {
 						$(opts.el).css({ left: 0 });
 						j = 1;
 					}
@@ -158,24 +164,49 @@
 						$(opts.el).css({ left: -(size - 1) * opts.width });
 						j = size - 2;
 					}
-					$(opts.el).stop().animate({ left: -j * opts.width }, 500);
+					$(opts.el).stop().animate({ left: -j * opts.width }, opts.speed);
 
-					/*if (j == size - 1) {
-						$(opts.el).find("li").eq(0).addClass("on").siblings().removeClass("on");
+					if (j == size - 1 && opts.numBtn) {
+						$(opts.el).siblings(".imgbtn").find("li").eq(0).addClass("active").siblings().removeClass("active");
 					} else {
-						$(opts.el).find("li").eq(j).addClass("on").siblings().removeClass("on");
-					}*/
+						$(opts.el).siblings(".imgbtn").find("li").eq(j).addClass("active").siblings().removeClass("active");
+					}
 				}
 				//初始化列表
+				$this.css("width",opts.width);
 				for(var i=0;i<imgLen.length;i++){
+					var jNumList = i == 0 ? '<li class="active" style="cursor: pointer"></li>':'<li style="cursor: pointer"></li>'
 					$(opts.el).width(maxWidth);
 					imgLen.parent().css({'float':'left','width':opts.width,'height':opts.height==''?$(opts.el).height():opts.height});
+					numlist.push(jNumList);
+				}
+				if(opts.numBtn){
+					$(this).append($(common.imgNum(numlist.join(""))));
+					var numWidth = $(".imgbtn").width(),
+						center = numWidth/2,
+						Numli = $this.find(".imgbtn").find("li");
+					$(".imgbtn").css("margin-left",-center+'px');
+					/*鼠标滑入原点事件*/
+					Numli.on("click",function () {
+						var index = $(this).index();//获取当前索引值
+						j = index;
+						$(opts.el).stop().animate({ left: -index * opts.width }, opts.speed);
+						$(this).addClass("active").siblings().removeClass("active");
+					});
+				}
+				if(opts.auto){
+					var t = setInterval(function () { j++; move();},opts.pause);
+					$(this).hover(function () {
+						clearInterval(t);//鼠标悬停时清除定时器
+					}, function () {
+						t = setInterval(function () { j++; move(); }, 2000); //鼠标移出时清除定时器
+					});
 				}
 			})
 		}
 	})
 	$(window).load(function(){
 		method.hrefLink();
-		$(".jdqslider").jdqSlider();
+		$(".jdqslider").jdqSlider({'width':300});
 	})
 })(jQuery);
