@@ -806,11 +806,10 @@ section { position:relative;}
   overflow: hidden;
   position: relative;
   width: 400px;
-  height:250px;
 }
 .jdqslider .img {
-  height:100%;
   position: relative;
+  height:auto;
 }
 .jdqslider .btn {
   width: 30px;
@@ -830,7 +829,6 @@ section { position:relative;}
 }
 .jdqslider .img img {
   display: block;
-  height:100%;
 }
 .jdqslider .btn_l {
   left: 10px;

@@ -134,7 +134,7 @@
 					numlist=[],
 					common = new function(){
 						this.imgNum = function(list){
-							return '<ul class="imgbtn" style="position:absolute;left:50%;bottom:20px;z-index:2;" >'+list+'</ul>';
+							return '<ul class="imgbtn" style="position:absolute;left:50%;bottom:40px;z-index:2;" >'+list+'</ul>';
 						},
 						this.btn = '<div class="btn btn_l">&lt;</div><div class="btn btn_r">&gt;</div>'
 					};
@@ -177,7 +177,7 @@
 				for(var i=0;i<imgLen.length;i++){
 					var jNumList = i == 0 ? '<li class="active" style="cursor: pointer"></li>':'<li style="cursor: pointer"></li>'
 					$(opts.el).width(maxWidth);
-					imgLen.parent().css({'float':'left','width':opts.width,'height':opts.height==''?$(opts.el).height():opts.height});
+					imgLen.parent().css({'float':'left','width':opts.width,'height':opts.height==''?$(opts.el).find("img").height():opts.height});
 					numlist.push(jNumList);
 				}
 				if(opts.numBtn){
@@ -187,7 +187,8 @@
 						Numli = $this.find(".imgbtn").find("li");
 					$(".imgbtn").css("margin-left",-center+'px');
 					/*鼠标滑入原点事件*/
-					Numli.on("click",function () {
+					Numli.on("click",function (ev) {
+						ev.stopPropagation();
 						var index = $(this).index();//获取当前索引值
 						j = index;
 						$(opts.el).stop().animate({ left: -index * opts.width }, opts.speed);
@@ -207,6 +208,6 @@
 	})
 	$(window).load(function(){
 		method.hrefLink();
-		$(".jdqslider").jdqSlider({'width':400});
+		$(".jdqslider").jdqSlider({'width':938});
 	})
 })(jQuery);
