@@ -208,6 +208,5 @@
 	})
 	$(window).load(function(){
 		method.hrefLink();
-		$(".jdqslider").jdqSlider({'width':938});
 	})
 })(jQuery);
