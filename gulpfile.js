@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var compass = require('gulp-compass');
 var uglify = require('gulp-uglify');//用于压缩js
+/*var rename = require('gulp-rename');//重命名*/
 var minifyCSS = require('gulp-minify-css');//用于压缩css
 var nunjucks = require('gulp-nunjucks-render');
 var rev = require('gulp-rev'); //md5
@@ -35,7 +36,7 @@ gulp.task('script', function() {
         // 2. 压缩文件
         .pipe(uglify())
         // 3. 另存压缩后的文件
-        .pipe(gulp.dest('./html/js/'))
+        .pipe(gulp.dest('./html/js/min/'))
 })
 //压缩css
 gulp.task('css', function () {
