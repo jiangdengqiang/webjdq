@@ -108,7 +108,7 @@ $.fn.extend({
 			'msg':"输出的内容",//弹出框的内容
 			"closeBtn":true,//是否显示关闭按钮
 			"bgframe":false,//是否需要背景层
-			"quitTime":'2000',//自动退出的时间间隔，一般和type:'alert'时候配合使用
+			"quitTime":'1500',//自动退出的时间间隔，一般和type:'alert'时候配合使用
 			"open":function(){}
 		}
 		var opts = $.extend({},defaults, options);
@@ -119,11 +119,20 @@ $.fn.extend({
 			"msg":function(){
 				alert("msg");
 			},
+			"stop":function(){
+				$(".tips").fadeOut();
+			},
 			"tips":function($this){
 				var top = $this.offset().top,
 					left = $this.offset().left,
 					tipsMsg = "<div class='tips' style='top:0; left:"+left+"px;'>"+opts.msg+"</div>";
-				return $this.append(tipsMsg);
+				    $this.append(tipsMsg);
+				    var time = setInterval(function(){
+						$(".tips").stop().fadeOut("100",function(){
+							$(this).remove();
+						});
+						clearInterval(time);
+					},opts.quitTime);
 			}
 		};
 		this.each(function(){
