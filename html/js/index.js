@@ -107,7 +107,7 @@
 	method.nav();
 	method.link();
 	method.share();
-	$.fn.extend({
+	/*$.fn.extend({
 		"jdqSlider":function(options){
 			//默认参数
 			var defaults = {
@@ -186,7 +186,7 @@
 						center = numWidth/2,
 						Numli = $this.find(".imgbtn").find("li");
 					$(".imgbtn").css("margin-left",-center+'px');
-					/*鼠标滑入原点事件*/
+					/!*鼠标滑入原点事件*!/
 					Numli.on("click",function (ev) {
 						ev.stopPropagation();
 						var index = $(this).index();//获取当前索引值
@@ -205,7 +205,7 @@
 				}
 			})
 		}
-	})
+	})*/
 	$(window).load(function(){
 		method.hrefLink();
 	})

@@ -101,20 +101,49 @@ $.fn.extend({
 		//默认参数
 		var defaults = {
 			'title':'这里填写一个标题',//弹出框的标题
-			'type':'alert',//弹出框的风格
+			'type':'tips',//弹出框的风格(alert,msg,tips)
 			'move':'fadeDown',//弹出框显示的动画
 			'width':'500',//弹出框的宽度
 			'height':'300',//弹出框的高度
 			'msg':"输出的内容",//弹出框的内容
 			"closeBtn":true,//是否显示关闭按钮
+			"bgframe":false,//是否需要背景层
 			"quitTime":'2000',//自动退出的时间间隔，一般和type:'alert'时候配合使用
+			"open":function(){}
 		}
 		var opts = $.extend({},defaults, options);
+		var layer = {
+			"alert":function(){
+				alert("alert");
+			},
+			"msg":function(){
+				alert("msg");
+			},
+			"tips":function($this){
+				var top = $this.offset().top,
+					left = $this.offset().left,
+					tipsMsg = "<div class='tips' style='top:0; left:"+left+"px;'>"+opts.msg+"</div>";
+				return $this.append(tipsMsg);
+			}
+		};
 		this.each(function(){
 			var $this = $(this);
-			$this.on("click",function(){
-				alert(1);
-			})
+			switch(opts.type){
+				case 'alert':
+				layer.alert($this);
+				break;
+				case 'msg':
+				layer.msg($this);
+				break;
+				case 'tips':
+				layer.tips($this);
+				break;
+			}
+			if(opts.bgframe){
+				/*初始化*/
+				var layer_bg = "<div class='jdq-frame'></div>";
+				$("body").append(layer_bg);
+			}
 		})
 	}
 })

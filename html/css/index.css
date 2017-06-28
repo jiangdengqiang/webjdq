@@ -307,6 +307,8 @@ section { position: relative; }
 
 #bdshare_weixin_qrcode_dialog.bd_weixin_popup { height: auto !important; }
 
+/************************ @ jdqslider @
+*************************/
 .jdqslider { overflow: hidden; position: relative; width: 400px; }
 
 .jdqslider .img { position: relative; height: auto; }
@@ -322,5 +324,15 @@ section { position: relative; }
 .imgbtn li { width: 10px; height: 10px; background-color: #888; border-radius: 50%; display: inline-block; margin: 0px 3px; cursor: pointer; }
 
 .imgbtn li.active { background-color: #ff6a00; }
+
+/************************ @ jdq-layer @
+*************************/
+.jdqbtn { padding: 5px 10px; border-radius: 4px; border: 1px solid #eee; font-size: 0.875em; }
+
+.jdqbtn:hover { border: 1px solid #33cc33; }
+
+.jdq-frame { position: absolute; top: 0; width: 100%; height: 100%; left: 0; background-color: #404042; opacity: 0.4; }
+
+.tips { position: absolute; top: 0; left: 0; padding: 5px 10px; font-size: 0.875em; background-color: #ea4c89; color: #fff; border-radius: 4px; }
 
 /*# sourceMappingURL=index.css.map */
