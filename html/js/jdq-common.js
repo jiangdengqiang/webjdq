@@ -111,8 +111,9 @@ $.fn.extend({
 			"quitTime":'1500',//自动退出的时间间隔，一般和type:'alert'时候配合使用
 			"open":function(){}
 		}
-		var opts = $.extend({},defaults, options);
-		var layer = {
+		var opts = $.extend({},defaults, options),
+			jsObj = {},
+		 	layer = {
 			"alert":function(){
 				alert("alert");
 			},
@@ -125,14 +126,19 @@ $.fn.extend({
 			"tips":function($this){
 				var top = $this.offset().top,
 					left = $this.offset().left,
-					tipsMsg = "<div class='tips' style='top:0; left:"+left+"px;'>"+opts.msg+"</div>";
-				    $this.append(tipsMsg);
-				    var time = setInterval(function(){
-						$(".tips").stop().fadeOut("100",function(){
-							$(this).remove();
-						});
+					$height = $this.outerHeight();
+					jsObj.tipsMsg = "<div class='tips' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>",
+					str = JSON.stringify(jsObj),
+					txtMsg = JSON.parse(str);
+				if(jsObj){
+					$("body").append(txtMsg.tipsMsg);
+				}
+				/*var time = setInterval(function(){
+					$(".tips").stop().fadeOut("100",function(){
+						$(this).remove();
 						clearInterval(time);
-					},opts.quitTime);
+					});
+				},opts.quitTime);*/
 			}
 		};
 		this.each(function(){
