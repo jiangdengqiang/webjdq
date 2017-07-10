@@ -127,18 +127,23 @@ $.fn.extend({
 				var top = $this.offset().top,
 					left = $this.offset().left,
 					$height = $this.outerHeight();
-					jsObj.tipsMsg = "<div class='tips' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>",
+					/*jsjdq = new function(){
+						this.jdq = function(){
+							return "<div class='tips tips_cartoon' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>";
+						}
+					},*/
+					jsObj.tipsMsg = "<div class='tips tips_cartoon' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>",
 					str = JSON.stringify(jsObj),
 					txtMsg = JSON.parse(str);
 				if(jsObj){
-					$("body").append(txtMsg.tipsMsg);
+					$(".tips").remove();
+					var objtxt = $this.parents("body").append(txtMsg.tipsMsg);
+					var time = setInterval(function(){
+						$this.parents("body").find(".tips").remove();
+						//clearInterval(time);
+					},1500);
+
 				}
-				/*var time = setInterval(function(){
-					$(".tips").stop().fadeOut("100",function(){
-						$(this).remove();
-						clearInterval(time);
-					});
-				},opts.quitTime);*/
 			}
 		};
 		this.each(function(){
