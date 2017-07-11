@@ -891,6 +891,17 @@ section { position:relative;}
   color: #fff;
   border-radius: 4px;
 }
+.tips:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 0px;
+  width: 0;
+  height: 0;
+  border-bottom: 12px solid transparent;
+  border-right: 10px solid #ea4c89;
+  border-top: 0px solid transparent;
+}
 .tips_cartoon {
   -webkit-animation: tips 0.3s ;
   -moz-animation: tips 0.3s;

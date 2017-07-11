@@ -17,7 +17,7 @@
 </head>
 <body>
 <div class="jdqlayer">
-    <a class="jdqlayer-btn jdqbtn type1" href="javascript:;">事例一</a>
+    <a class="jdqlayer-btn jdqbtn type1" href="javascript:;">tips标记弹框</a>
     <a class="jdqlayer-btn jdqbtn type2" href="javascript:;">事例二</a>
     <a class="jdqlayer-btn jdqbtn type3" href="javascript:;">事例三</a>
     <a class="jdqlayer-btn jdqbtn type4" href="javascript:;">事例四</a>
@@ -28,7 +28,7 @@
 <script type="text/javascript">
     $(function(){
         $(".jdqlayer-btn").click(function(){
-            $(this).jdqLayer({"msg":$(this).text()});
+            $(this).jdqLayer({"type":"tips","msg":$(this).text()});
         })
     })
 </script>

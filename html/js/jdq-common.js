@@ -138,11 +138,9 @@ $.fn.extend({
 				if(jsObj){
 					$(".tips").remove();
 					var objtxt = $this.parents("body").append(txtMsg.tipsMsg);
-					var time = setInterval(function(){
-						$this.parents("body").find(".tips").remove();
-						//clearInterval(time);
-					},1500);
-
+					/*$this.parents("body").find(".tips").stop().delay(opts.quitTime).animate({'opacity':0},300,function(){
+						$(this).remove();
+					});*/
 				}
 			}
 		};
