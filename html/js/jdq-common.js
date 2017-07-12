@@ -101,7 +101,7 @@ $.fn.extend({
 		//默认参数
 		var defaults = {
 			'title':'这里填写一个标题',//弹出框的标题
-			'type':'tips',//弹出框的风格(alert,msg,tips)
+			'type':'tips',//弹出框的风格(alert,confirm,prompt,tips,iframe)
 			'move':'fadeDown',//弹出框显示的动画
 			'width':'500',//弹出框的宽度
 			'height':'300',//弹出框的高度
@@ -132,15 +132,15 @@ $.fn.extend({
 							return "<div class='tips tips_cartoon' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>";
 						}
 					},*/
-					jsObj.tipsMsg = "<div class='tips tips_cartoon' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>",
+					jsObj.tipsMsg = "<div class='tips tips_cartoon' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>";
 					str = JSON.stringify(jsObj),
 					txtMsg = JSON.parse(str);
 				if(jsObj){
 					$(".tips").remove();
 					var objtxt = $this.parents("body").append(txtMsg.tipsMsg);
-					/*$this.parents("body").find(".tips").stop().delay(opts.quitTime).animate({'opacity':0},300,function(){
+					$this.parents("body").find(".tips").stop().delay(opts.quitTime).animate({'opacity':0},300,function(){
 						$(this).remove();
-					});*/
+					});
 				}
 			}
 		};
