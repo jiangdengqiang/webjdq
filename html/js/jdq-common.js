@@ -105,9 +105,9 @@ $.fn.extend({
 			'move':'fadeDown',//弹出框显示的动画
 			'width':'500',//弹出框的宽度
 			'height':'300',//弹出框的高度
-			'msg':"输出的内容",//弹出框的内容
+			'msg':"",//弹出框的内容
 			"closeBtn":true,//是否显示关闭按钮
-			"bgframe":false,//是否需要背景层
+			"bgframe":true,//是否需要背景层
 			"quitTime":'1500',//自动退出的时间间隔，一般和type:'alert'时候配合使用
 			"open":function(){}
 		}
@@ -115,7 +115,12 @@ $.fn.extend({
 			jsObj = {},
 		 	layer = {
 			"alert":function(){
-				alert("alert");
+				var layerAlert = '<div class="jdq-alert-layer"><div class="jdq-module">';
+				opts.title!=""?layerAlert+='<h2 class="alert_title">'+opts.title+'</h2>':layerAlert;
+				opts.msg!=""?layerAlert+='<div class="jdq-alert-msg">'+opts.msg+'</div>':layerAlert;
+				layerAlert+='<a href="javascript:;" class="sure">确定</a></div></div>';
+				$("body").append(layerAlert);
+
 			},
 			"msg":function(){
 				alert("msg");
@@ -127,11 +132,6 @@ $.fn.extend({
 				var top = $this.offset().top,
 					left = $this.offset().left,
 					$height = $this.outerHeight();
-					/*jsjdq = new function(){
-						this.jdq = function(){
-							return "<div class='tips tips_cartoon' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>";
-						}
-					},*/
 					jsObj.tipsMsg = "<div class='tips tips_cartoon' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>";
 					str = JSON.stringify(jsObj),
 					txtMsg = JSON.parse(str);
@@ -157,10 +157,10 @@ $.fn.extend({
 				layer.tips($this);
 				break;
 			}
-			if(opts.bgframe){
+			if(opts.bgframe && opts.type!='tips'){
 				/*初始化*/
-				var layer_bg = "<div class='jdq-frame'></div>";
-				$("body").append(layer_bg);
+				var layerBg = '<div class="jdq-layer-bg"></div>';
+				$("body").append(layerBg);
 			}
 		})
 	}

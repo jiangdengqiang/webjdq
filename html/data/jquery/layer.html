@@ -28,7 +28,8 @@
 <script type="text/javascript">
     $(function(){
         $(".jdqlayer-btn").click(function(){
-            $(this).jdqLayer({"type":"tips","msg":$(this).text()});
+            if($(this).hasClass("type1")) $(this).jdqLayer({"type":"tips","msg":$(this).text()});
+            if($(this).hasClass("type2")) $(this).jdqLayer({"type":"alert","msg":$(this).text()});
         })
     })
 </script>

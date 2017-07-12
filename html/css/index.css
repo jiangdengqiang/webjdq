@@ -325,7 +325,7 @@ section { position: relative; }
 
 .imgbtn li.active { background-color: #ff6a00; }
 
-/************************ @ jdq-layer @
+/************************ @ jdq-layer @tips
 *************************/
 .jdqlayer { height: 500px; margin-top: 1000px; padding-top: 500px; }
 
@@ -347,5 +347,18 @@ section { position: relative; }
   100% { -webkit-transform: scale(1); opacity: 1; } }
 @-moz-keyframes tips { 0% { -moz-transform: scale(0); opacity: 0; }
   100% { -moz-transform: scale(1); opacity: 1; } }
+/************************ @ jdq-layer @alert
+*************************/
+.jdq-layer-bg { position: fixed; top: 0; left: 0; bottom: 0; width: 100%; background-color: #404042; opacity: 0.8; }
+
+.jdq-alert-layer { position: fixed; left: 50%; top: 50%; z-index: 1000; background-color: #fff; margin-left: -150px; margin-top: -50px; border-radius: 4px; }
+
+.jdq-alert-layer .alert_title { font-size: 1em; font-weight: bold; }
+
+.jdq-module { position: relative; padding: 20px; min-width: 300px; min-height: 100px; padding-bottom: 50px; max-width: 400px; }
+
+.jdq-alert-layer .jdq-alert-msg { margin-top: 10px; font-size: 0.875em; line-height: 1.5; }
+
+.jdq-alert-layer .sure { position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; font-size: 0.875em; border-top: 1px solid #33cc33; padding: 9px 0 10px; }
 
 /*# sourceMappingURL=index.css.map */
