@@ -351,7 +351,7 @@ section { position: relative; }
 *************************/
 .jdq-layer-bg { position: fixed; top: 0; left: 0; bottom: 0; width: 100%; background-color: #404042; opacity: 0.8; }
 
-.jdq-alert-layer { position: fixed; left: 50%; top: 50%; z-index: 1000; background-color: #fff; margin-left: -150px; margin-top: -50px; border-radius: 4px; }
+.jdq-alert-layer { position: fixed; left: 50%; top: 50%; z-index: 1000; background-color: #fff; margin-left: -150px; margin-top: -50px; border-radius: 4px; border: 1px solid #e0dfdf; }
 
 .jdq-alert-layer .alert_title { font-size: 1em; font-weight: bold; }
 
