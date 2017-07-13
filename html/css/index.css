@@ -327,7 +327,7 @@ section { position: relative; }
 
 /************************ @ jdq-layer @tips
 *************************/
-.jdqlayer { height: 500px; margin-top: 1000px; padding-top: 500px; }
+.jdqlayer { margin: 100px; }
 
 .jdqbtn { padding: 5px 10px; border-radius: 4px; border: 1px solid #eee; font-size: 0.875em; }
 
@@ -351,16 +351,28 @@ section { position: relative; }
 *************************/
 .jdq-layer-bg { position: fixed; top: 0; left: 0; bottom: 0; width: 100%; background-color: #404042; opacity: 0.8; }
 
-.jdq-alert-layer { position: fixed; left: 50%; top: 50%; z-index: 1000; background-color: #fff; margin-left: -150px; margin-top: -50px; border-radius: 4px; border: 1px solid #e0dfdf; }
+.jdq-alert-layer { position: fixed; left: 50%; top: 50%; z-index: 1000; background-color: #fff; margin-left: -150px; margin-top: -50px; border-radius: 4px; box-shadow: 0px 0px 10px #404042; }
 
-.jdq-alert-layer .alert_title { font-size: 1em; font-weight: bold; }
+.jdq-alert-layer .alert_title { font-size: 1em; font-weight: bold; font-family: "Microsoft Yahei"; }
 
-.jdq-module { position: relative; padding: 20px; min-width: 300px; min-height: 100px; padding-bottom: 50px; max-width: 400px; }
+.jdq-module { position: relative; padding: 20px 20px 52px; min-width: 300px; min-height: 100px; max-width: 400px; }
 
 .jdq-alert-layer .jdq-alert-msg { margin-top: 10px; font-size: 0.875em; line-height: 1.5; }
 
 .jdq-alert-layer .sure { position: absolute; bottom: 0; left: 0; width: 100%; text-align: center; font-size: 1em; border-top: 1px solid #47cf73; padding: 9px 0 10px; }
 
 .jdq-alert-layer .sure:hover { color: #fff; background-color: #47cf73; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; }
+
+.jdq-slide-down { -webkit-animation: jdq-slide-down 0.8s; -moz-animation: jdq-slide-down 0.8s; -ms-animation: jdq-slide-down 0.8s; }
+
+@keyframes jdq-slide-down { 0% { opacity: 0; transform: translate(0, -30px); }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; transform: translate(0, 0); } }
+@-webkit-keyframes jdq-slide-down { 0% { opacity: 0; -webkit-transform: translate(0, -30px); }
+  50% { opacity: 0.6; }
+  100% { opacity: 1; -webkit-transform: translate(0, 0); } }
+@-moz-keyframes jdq-slide-down { 0% { opacity: 0; -moz-transform: translate(0, -30px); }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; -moz-transform: translate(0, 0); } }
 
 /*# sourceMappingURL=index.css.map */

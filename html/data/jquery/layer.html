@@ -18,7 +18,7 @@
 <body>
 <div class="jdqlayer">
     <a class="jdqlayer-btn jdqbtn type1" href="javascript:;">tips标记弹框</a>
-    <a class="jdqlayer-btn jdqbtn type2" href="javascript:;">事例二</a>
+    <a class="jdqlayer-btn jdqbtn type2" href="javascript:;">Alert弹框风格</a>
     <a class="jdqlayer-btn jdqbtn type3" href="javascript:;">事例三</a>
     <a class="jdqlayer-btn jdqbtn type4" href="javascript:;">事例四</a>
 </div>
@@ -29,7 +29,13 @@
     $(function(){
         $(".jdqlayer-btn").click(function(){
             if($(this).hasClass("type1")) $(this).jdqLayer({"type":"tips","msg":$(this).text()});
-            if($(this).hasClass("type2")) $(this).jdqLayer({"type":"alert","msg":$(this).text()});
+            if($(this).hasClass("type2")) $(this).jdqLayer({
+                "type":"alert",
+                "title":$(this).text(),
+                "msg":"Hello 欢迎来到-jdqLayer！",
+                "clickSure":function(){
+                }
+            });
         })
     })
 </script>

@@ -103,24 +103,36 @@ $.fn.extend({
 			'title':'这里填写一个标题',//弹出框的标题
 			'type':'tips',//弹出框的风格(alert,confirm,prompt,tips,iframe)
 			'move':'fadeDown',//弹出框显示的动画
-			'width':'500',//弹出框的宽度
-			'height':'300',//弹出框的高度
+			'width':'300',//弹出框的宽度
+			'height':'200',//弹出框的高度
 			'msg':"",//弹出框的内容
 			"closeBtn":true,//是否显示关闭按钮
 			"bgframe":true,//是否需要背景层
 			"quitTime":'1500',//自动退出的时间间隔，一般和type:'alert'时候配合使用
-			"open":function(){}
+			"clickSure":function(){},//点击确定按钮后执行函数
+			"clickCancel":function(){}//点击取消按钮执行函数
 		}
 		var opts = $.extend({},defaults, options),
 			jsObj = {},
 		 	layer = {
 			"alert":function(){
-				var layerAlert = '<div class="jdq-alert-layer"><div class="jdq-module">';
+				var layerAlert = '<div class="jdq-alert-layer jdq-slide-down"><div class="jdq-module">';
 				opts.title!=""?layerAlert+='<h2 class="alert_title">'+opts.title+'</h2>':layerAlert;
 				opts.msg!=""?layerAlert+='<div class="jdq-alert-msg">'+opts.msg+'</div>':layerAlert;
-				layerAlert+='<a href="javascript:;" class="sure">确定</a></div></div>';
+				layerAlert+='<a href="javascript:;" class="jdqBtn sure">确定</a></div></div>';
 				$("body").append(layerAlert);
-
+				var jdqLayer = $("body").find(".jdq-alert-layer");
+				jdqLayer.css({"marginLeft":-(jdqLayer.width()/2),"marginTop":-(jdqLayer.outerHeight()/2)});
+				$(document).on("click",".jdqBtn",function(){
+					var $this = $(this);
+					$(".jdq-alert-layer").animate({'top':'45%','opacity':0},500,function(){
+						$(this).remove();
+						$(".jdq-layer-bg").fadeOut(200,function(){
+							$(this).remove();
+							if($this.hasClass("sure"))opts.clickSure();
+						});
+					});
+				})
 			},
 			"msg":function(){
 				alert("msg");
