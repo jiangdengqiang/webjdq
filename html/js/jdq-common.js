@@ -103,7 +103,7 @@ $.fn.extend({
 		//默认参数
 		var defaults = {
 			'title':'这里填写一个标题',//弹出框的标题
-			'type':'tips',//弹出框的风格(alert,confirm,prompt,tips,iframe)
+			'type':'tips',//弹出框的风格(alert,confirm,tips,iframe)
 			'width':'300',//弹出框的宽度
 			'height':'200',//弹出框的高度
 			'msg':"默认是tips类型框",//弹出框的内容
@@ -198,6 +198,7 @@ $.fn.extend({
 				layer.iframe($this);
 				break;
 			}
+			//背景层初始化
 			if(opts.bgframe && opts.type!='tips'){
 				/*初始化*/
 				var layerBg = '<div class="jdq-layer-bg"></div>';
@@ -211,6 +212,7 @@ $.fn.extend({
 					});
 				})
 			}
+			//点击关闭按钮
 			if(opts.closeBtn){
 				$(document).unbind().delegate(".jdq-icon-close","click",function(){
 					layerBtn.closeFrame($(this));
