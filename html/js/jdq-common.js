@@ -109,7 +109,9 @@ $.fn.extend({
 			'msg':"默认是tips类型框",//弹出框的内容
 			"closeBtn":false,//是否显示关闭按钮
 			"bgframe":false,//是否需要背景层
-			"quitTime":'1500',//自动退出的时间间隔，一般和type:'alert'时候配合使用
+			"btnSureText":"确认",//确认按钮的文字
+			"btnCancelText":"取消",//取消按钮的文字
+			"quitTime":'1500',//自动退出的时间间隔，一般和type:'tips'时候配合使用
 			"clickSure":function(){},//点击确定按钮后执行回调函数
 			"clickCancel":function(){}//点击取消按钮执行回调函数
 		}
@@ -121,7 +123,7 @@ $.fn.extend({
 				opts.closeBtn?layerAlert+='<a href="javascript:;" class="jdq-icon-close"></a>':layerAlert;
 				opts.title!=""?layerAlert+='<h2 class="alert_title">'+opts.title+'</h2>':layerAlert;
 				opts.msg!=""?layerAlert+='<div class="jdq-alert-msg">'+opts.msg+'</div>':layerAlert;
-				layerAlert+='<div id="btnbox"><button class="jdq-sure-btn sure">确定</button></div></div></div>';
+				layerAlert+='<div id="btnbox"><button class="jdq-sure-btn sure">'+opts.btnSureText+'</button></div></div></div>';
 				$(".jdq-alert-layer.open").remove();
 				$("body").append(layerAlert);
 				var jdqLayer = $("body").find(".jdq-alert-layer");
@@ -135,7 +137,7 @@ $.fn.extend({
 				opts.closeBtn?layerAlert+='<a href="javascript:;" class="jdq-icon-close"></a>':layerAlert;
 				opts.title!=""?layerAlert+='<h2 class="alert_title">'+opts.title+'</h2>':layerAlert;
 				opts.msg!=""?layerAlert+='<div class="jdq-alert-msg">'+opts.msg+'</div>':layerAlert;
-				layerAlert+='<div id="btnbox"><button  class="jdq-sure-btn sure w50">确定</button><button class="jdq-cancel-btn cancel w50">取消</button></div></div></div>';
+				layerAlert+='<div id="btnbox"><button  class="jdq-sure-btn sure w50">'+opts.btnSureText+'</button><button class="jdq-cancel-btn cancel w50">'+opts.btnCancelText+'</button></div></div></div>';
 				$(".jdq-alert-layer.open").remove();
 				$("body").append(layerAlert);
 				var jdqLayer = $("body").find(".jdq-alert-layer");
@@ -167,7 +169,13 @@ $.fn.extend({
 				}
 			},
 			"iframe":function($this){
-				alert("该功能正在研发阶段！请耐心等待！");
+				var layerAlert = '<div class="jdq-iframe-layer jdq-slide-down open"><div class="jdq-module">';
+				opts.closeBtn?layerAlert+='<a href="javascript:;" class="jdq-icon-close"></a>':layerAlert;
+				opts.title!=""?layerAlert+='<h2 class="alert_title">'+opts.title+'</h2>':layerAlert;
+				opts.msg!=""?layerAlert+='<div class="jdq-alert-msg">'+opts.msg+'</div>':layerAlert;
+				layerAlert+='<div id="btnbox"><button  class="jdq-sure-btn sure w50">'+opts.btnSureText+'</button><button class="jdq-cancel-btn cancel w50">'+opts.btnCancelText+'</button></div></div></div>';
+				$(".jdq-alert-layer.open").remove();
+				$("body").append(layerAlert);
 			}
 		},
 		layerBtn = {

@@ -43,6 +43,17 @@
                 "msg":"<p>你觉得这个插件如何?</p>",
                 "closeBtn":true,
                 "bgframe":true,
+                "btnSureText":"不错",
+                "btnCancelText":"一般般",
+                "clickSure":function(){
+                    $(".type3").jdqLayer({"type":"tips","msg":"谢谢你的评价！","quitTime":"800"});
+                },
+                "clickCancel":function(){
+                    $(".type3").jdqLayer({"type":"tips","msg":"我会努力,总有一天会让你刮目相看！","quitTime":"1500"});
+                }
+            })
+            if($(this).hasClass("type4")) $(this).jdqLayer({
+                "type":"iframe"
             })
         })
     })
