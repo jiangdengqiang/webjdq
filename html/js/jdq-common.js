@@ -106,9 +106,9 @@ $.fn.extend({
 			'type':'tips',//弹出框的风格(alert,confirm,prompt,tips,iframe)
 			'width':'300',//弹出框的宽度
 			'height':'200',//弹出框的高度
-			'msg':"",//弹出框的内容
+			'msg':"默认是tips类型框",//弹出框的内容
 			"closeBtn":false,//是否显示关闭按钮
-			"bgframe":true,//是否需要背景层
+			"bgframe":false,//是否需要背景层
 			"quitTime":'1500',//自动退出的时间间隔，一般和type:'alert'时候配合使用
 			"clickSure":function(){},//点击确定按钮后执行回调函数
 			"clickCancel":function(){}//点击取消按钮执行回调函数
@@ -121,26 +121,35 @@ $.fn.extend({
 				opts.closeBtn?layerAlert+='<a href="javascript:;" class="jdq-icon-close"></a>':layerAlert;
 				opts.title!=""?layerAlert+='<h2 class="alert_title">'+opts.title+'</h2>':layerAlert;
 				opts.msg!=""?layerAlert+='<div class="jdq-alert-msg">'+opts.msg+'</div>':layerAlert;
-				layerAlert+='<a href="javascript:;" class="jdqBtn sure">确定</a></div></div>';
+				layerAlert+='<div id="btnbox"><button class="jdq-sure-btn sure">确定</button></div></div></div>';
+				$(".jdq-alert-layer.open").remove();
 				$("body").append(layerAlert);
 				var jdqLayer = $("body").find(".jdq-alert-layer");
 				jdqLayer.css({"marginLeft":-(jdqLayer.width()/2),"marginTop":-(jdqLayer.outerHeight()/2)});
-				$(document).on("click",".jdqBtn",function(){
-					var $this = $(this);
-					$(this).parents(".open").animate({'top':'45%','opacity':0},500,function(){
-						$(this).remove();
-						$(".jdq-layer-bg").fadeOut(200,function(){
-							$(this).remove();
-							if($this.hasClass("sure"))opts.clickSure();
-						});
-					});
+				$("body").unbind().delegate("#btnbox button","click",function(){
+					layerBtn.closeFrame($(this));
 				})
 			},
-			"msg":function(){
-				alert("msg");
-			},
-			"stop":function(){
-				$(".tips").fadeOut();
+			"confirm":function(){
+				var layerAlert = '<div class="jdq-alert-layer jdq-slide-down open"><div class="jdq-module">';
+				opts.closeBtn?layerAlert+='<a href="javascript:;" class="jdq-icon-close"></a>':layerAlert;
+				opts.title!=""?layerAlert+='<h2 class="alert_title">'+opts.title+'</h2>':layerAlert;
+				opts.msg!=""?layerAlert+='<div class="jdq-alert-msg">'+opts.msg+'</div>':layerAlert;
+				layerAlert+='<div id="btnbox"><button  class="jdq-sure-btn sure w50">确定</button><button class="jdq-cancel-btn cancel w50">取消</button></div></div></div>';
+				$(".jdq-alert-layer.open").remove();
+				$("body").append(layerAlert);
+				var jdqLayer = $("body").find(".jdq-alert-layer");
+				jdqLayer.css({"marginLeft":-(jdqLayer.width()/2),"marginTop":-(jdqLayer.outerHeight()/2)});
+				$("body").unbind().delegate("#btnbox button","click",function(){
+					if($(this).hasClass("sure")){
+						layerBtn.closeFrame($(this));
+						return false;
+					}
+					if($(this).hasClass("cancel")){
+						layerBtn.closeFrame($(this));
+						return false;
+					}
+				})
 			},
 			"tips":function($this){
 				var top = $this.offset().top,
@@ -156,35 +165,56 @@ $.fn.extend({
 						$(this).remove();
 					});
 				}
+			},
+			"iframe":function($this){
+				alert("该功能正在研发阶段！请耐心等待！");
 			}
-		};
+		},
+		layerBtn = {
+			"closeFrame":function($this){
+				$this.parents(".open").animate({'top':'45%','opacity':0},500,function(){
+					$(this).remove();
+					$(".jdq-layer-bg").fadeOut(200,function(){
+						$(this).remove();
+						if($this.hasClass("sure"))opts.clickSure();
+						if($this.hasClass("cancel"))opts.clickCancel();
+					});
+				});
+			}
+		}
 		this.each(function(){
 			var $this = $(this);
 			switch(opts.type){
 				case 'alert':
 				layer.alert($this);
 				break;
-				case 'msg':
-				layer.msg($this);
+				case 'confirm':
+				layer.confirm($this);
 				break;
 				case 'tips':
 				layer.tips($this);
+				break;
+				case 'iframe':
+				layer.iframe($this);
 				break;
 			}
 			if(opts.bgframe && opts.type!='tips'){
 				/*初始化*/
 				var layerBg = '<div class="jdq-layer-bg"></div>';
 				$("body").append(layerBg);
-			}
-			if(opts.closeBtn){
-				$(document).on("click",".jdq-icon-close",function(){
-					$(this).parents(".open").animate({'top':'45%','opacity':0},500,function(){
+				$(".jdq-layer-bg").unbind().bind("click",function(){
+					$(this).siblings(".open").animate({'top':'45%','opacity':0},500,function(){
 						$(this).remove();
 						$(".jdq-layer-bg").fadeOut(200,function(){
 							$(this).remove();
 						});
 					});
 				})
+			}
+			if(opts.closeBtn){
+				$(document).unbind().delegate(".jdq-icon-close","click",function(){
+					layerBtn.closeFrame($(this));
+				});
 			}
 		})
 	}

@@ -19,8 +19,8 @@
 <div class="jdqlayer">
     <a class="jdqlayer-btn jdqbtn type1" href="javascript:;">tips标记弹框</a>
     <a class="jdqlayer-btn jdqbtn type2" href="javascript:;">Alert弹框风格</a>
-    <a class="jdqlayer-btn jdqbtn type3" href="javascript:;">事例三</a>
-    <a class="jdqlayer-btn jdqbtn type4" href="javascript:;">事例四</a>
+    <a class="jdqlayer-btn jdqbtn type3" href="javascript:;">confirm弹框类型</a>
+    <a class="jdqlayer-btn jdqbtn type4" href="javascript:;">iframe加载新页面弹框</a>
 </div>
 </body>
 <script type="text/javascript" src="../../js/jquery-1.8.3.js"></script>
@@ -33,10 +33,17 @@
                 "type":"alert",
                 "title":$(this).text(),
                 "msg":"Hello 欢迎来到-jdqLayer！",
-                "closeBtn":false,
+                "closeBtn":true,
+                "bgframe":true,
                 "clickSure":function(){
                 }
             });
+            if($(this).hasClass("type3")) $(this).jdqLayer({
+                "type":"confirm",
+                "msg":"<p>你觉得这个插件如何?</p>",
+                "closeBtn":true,
+                "bgframe":true,
+            })
         })
     })
 </script>
