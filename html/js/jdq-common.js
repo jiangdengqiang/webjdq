@@ -1,5 +1,6 @@
 ﻿;(function($){
 $.fn.extend({
+	/*无缝轮播插件*/
 	"jdqSlider":function(options){
 		//默认参数
 		var defaults = {
@@ -97,26 +98,27 @@ $.fn.extend({
 			}
 		})
 	},
+	/*弹出框插件*/
 	"jdqLayer":function(options){
 		//默认参数
 		var defaults = {
 			'title':'这里填写一个标题',//弹出框的标题
 			'type':'tips',//弹出框的风格(alert,confirm,prompt,tips,iframe)
-			'move':'fadeDown',//弹出框显示的动画
 			'width':'300',//弹出框的宽度
 			'height':'200',//弹出框的高度
 			'msg':"",//弹出框的内容
-			"closeBtn":true,//是否显示关闭按钮
+			"closeBtn":false,//是否显示关闭按钮
 			"bgframe":true,//是否需要背景层
 			"quitTime":'1500',//自动退出的时间间隔，一般和type:'alert'时候配合使用
-			"clickSure":function(){},//点击确定按钮后执行函数
-			"clickCancel":function(){}//点击取消按钮执行函数
+			"clickSure":function(){},//点击确定按钮后执行回调函数
+			"clickCancel":function(){}//点击取消按钮执行回调函数
 		}
 		var opts = $.extend({},defaults, options),
 			jsObj = {},
 		 	layer = {
 			"alert":function(){
-				var layerAlert = '<div class="jdq-alert-layer jdq-slide-down"><div class="jdq-module">';
+				var layerAlert = '<div class="jdq-alert-layer jdq-slide-down open"><div class="jdq-module">';
+				opts.closeBtn?layerAlert+='<a href="javascript:;" class="jdq-icon-close"></a>':layerAlert;
 				opts.title!=""?layerAlert+='<h2 class="alert_title">'+opts.title+'</h2>':layerAlert;
 				opts.msg!=""?layerAlert+='<div class="jdq-alert-msg">'+opts.msg+'</div>':layerAlert;
 				layerAlert+='<a href="javascript:;" class="jdqBtn sure">确定</a></div></div>';
@@ -125,7 +127,7 @@ $.fn.extend({
 				jdqLayer.css({"marginLeft":-(jdqLayer.width()/2),"marginTop":-(jdqLayer.outerHeight()/2)});
 				$(document).on("click",".jdqBtn",function(){
 					var $this = $(this);
-					$(".jdq-alert-layer").animate({'top':'45%','opacity':0},500,function(){
+					$(this).parents(".open").animate({'top':'45%','opacity':0},500,function(){
 						$(this).remove();
 						$(".jdq-layer-bg").fadeOut(200,function(){
 							$(this).remove();
@@ -144,7 +146,7 @@ $.fn.extend({
 				var top = $this.offset().top,
 					left = $this.offset().left,
 					$height = $this.outerHeight();
-					jsObj.tipsMsg = "<div class='tips tips_cartoon' style='top:"+(top-$height-20)+"px; left:"+left+"px;'>"+opts.msg+"</div>";
+					jsObj.tipsMsg = "<div class='tips tips_cartoon' style='top:"+(top-40)+"px; left:"+left+"px;'>"+opts.msg+"</div>";
 					str = JSON.stringify(jsObj),
 					txtMsg = JSON.parse(str);
 				if(jsObj){
@@ -173,6 +175,16 @@ $.fn.extend({
 				/*初始化*/
 				var layerBg = '<div class="jdq-layer-bg"></div>';
 				$("body").append(layerBg);
+			}
+			if(opts.closeBtn){
+				$(document).on("click",".jdq-icon-close",function(){
+					$(this).parents(".open").animate({'top':'45%','opacity':0},500,function(){
+						$(this).remove();
+						$(".jdq-layer-bg").fadeOut(200,function(){
+							$(this).remove();
+						});
+					});
+				})
 			}
 		})
 	}
