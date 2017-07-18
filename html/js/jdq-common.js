@@ -104,14 +104,15 @@ $.fn.extend({
 		var defaults = {
 			'title':'这里填写一个标题',//弹出框的标题
 			'type':'tips',//弹出框的风格(alert,confirm,tips,iframe)
-			'width':'300',//弹出框的宽度
+			'width':'400',//弹出框的宽度
 			'height':'200',//弹出框的高度
 			'msg':"默认是tips类型框",//弹出框的内容
-			"closeBtn":false,//是否显示关闭按钮
-			"bgframe":false,//是否需要背景层
+			"closeBtn":true,//是否显示关闭按钮
+			"bgframe":true,//是否需要背景层
 			"btnSureText":"确认",//确认按钮的文字
 			"btnCancelText":"取消",//取消按钮的文字
 			"quitTime":'1500',//自动退出的时间间隔，一般和type:'tips'时候配合使用
+			"url":"",//iframe 访问的链接地址
 			"clickSure":function(){},//点击确定按钮后执行回调函数
 			"clickCancel":function(){}//点击取消按钮执行回调函数
 		}
@@ -169,13 +170,16 @@ $.fn.extend({
 				}
 			},
 			"iframe":function($this){
-				var layerAlert = '<div class="jdq-iframe-layer jdq-slide-down open"><div class="jdq-module">';
+				var layerAlert = '<div class="jdq-iframe-layer jdq-slide-down open"><div class="jdq-module" style="width:'+opts.width+'px;height:'+opts.height+'px;">';
 				opts.closeBtn?layerAlert+='<a href="javascript:;" class="jdq-icon-close"></a>':layerAlert;
 				opts.title!=""?layerAlert+='<h2 class="alert_title">'+opts.title+'</h2>':layerAlert;
-				opts.msg!=""?layerAlert+='<div class="jdq-alert-msg">'+opts.msg+'</div>':layerAlert;
-				layerAlert+='<div id="btnbox"><button  class="jdq-sure-btn sure w50">'+opts.btnSureText+'</button><button class="jdq-cancel-btn cancel w50">'+opts.btnCancelText+'</button></div></div></div>';
+				opts.msg!=""?layerAlert+='<div class="jdq-iframe-page"><iframe src="'+opts.url+'" width="100%" frameborder="no" border="0" marginwidth="0" marginheight="0" allowtransparency="yes" scrolling="auto"></iframe></div>':layerAlert;
 				$(".jdq-alert-layer.open").remove();
 				$("body").append(layerAlert);
+				var iframeHeight = opts.height-$(".alert_title").outerHeight(),
+					jdqLayer = $("body").find(".jdq-iframe-layer");
+				$(".jdq-iframe-page").find("iframe").height(iframeHeight);
+				jdqLayer.css({"marginLeft":-(jdqLayer.width()/2),"marginTop":-(jdqLayer.outerHeight()/2)});
 			}
 		},
 		layerBtn = {

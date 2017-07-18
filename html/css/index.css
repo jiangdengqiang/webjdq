@@ -392,4 +392,16 @@ button.jdq-sure-btn { width: 100%; border: 0; background-color: transparent; }
 
 .jdq-alert-msg h2 { font-family: "Microsoft Yahei"; font-size: 1em; }
 
+/************************ @ jdq-layer @iframe
+*************************/
+.jdq-iframe-layer { position: fixed; left: 50%; top: 50%; z-index: 1000; background-color: #fff; margin-left: -150px; margin-top: -50px; border-radius: 4px; box-shadow: 0px 0px 10px #404042; }
+
+.jdq-iframe-layer .jdq-module { padding: 0; }
+
+.jdq-iframe-layer .jdq-module .alert_title { padding: 20px 40px 20px 20px; border-bottom: 1px solid #e0dfdf; }
+
+.jdq-iframe-layer .jdq-icon-close { top: 12px; }
+
+.jdq-module { max-width: inherit; min-height: inherit; }
+
 /*# sourceMappingURL=index.css.map */
