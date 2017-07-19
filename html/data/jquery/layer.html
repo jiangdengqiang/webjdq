@@ -22,6 +22,111 @@
     <a class="jdqlayer-btn jdqbtn type3" href="javascript:;">confirm弹框类型</a>
     <a class="jdqlayer-btn jdqbtn type4" href="javascript:;">iframe加载新页面弹框</a>
 </div>
+<div class="new-content">
+    <h3>参数说明</h3>
+    <table>
+        <tr>
+            <th>名称</th>
+            <th>默认值</th>
+            <th>说明</th>
+        </tr>
+        <tr>
+            <td>type</td>
+            <td>tips</td>
+            <td>弹框的类型，有：tips,alert,confirm,iframe这几种类型。</td>
+        </tr>
+        <tr>
+            <td>title</td>
+            <td>String("这是一个标题")</td>
+            <td>弹出框的标题</td>
+        </tr>
+        <tr>
+            <td>msg</td>
+            <td>String</td>
+            <td>弹出框的内容部分，可以加上HTML标签</td>
+        </tr>
+        <tr>
+            <td>closeBtn</td>
+            <td>true</td>
+            <td>是否显示关闭按钮 true/false</td>
+        </tr>
+        <tr>
+            <td>bgframe</td>
+            <td>true</td>
+            <td>是否需要背景层 true/false</td>
+        </tr>
+        <tr>
+            <td>btnSureText</td>
+            <td>String("确认")</td>
+            <td>这里是确认的按钮的文字</td>
+        </tr>
+        <tr>
+            <td>btnCancelText</td>
+            <td>String("取消")</td>
+            <td>这里是取消的按钮的文字</td>
+        </tr>
+        <tr>
+            <td>quitTime</td>
+            <td>1500</td>
+            <td>自动退出的时间间隔，一般和type:'tips'时候配合使用</td>
+        </tr>
+        <tr>
+            <td>url</td>
+            <td>String</td>
+            <td>这里是iframe类型弹框的url链接的地址</td>
+        </tr>
+        <tr>
+            <td>clickSure:function(){}</td>
+            <td></td>
+            <td>点击确定按钮后执行回调函数</td>
+        </tr>
+        <tr>
+            <td>clickCancel:function(){}</td>
+            <td></td>
+            <td>点击取消按钮后执行回调函数</td>
+        </tr>
+    </table>
+    <h3>例如:</h3>
+    <pre>
+        $(function(){
+           $(".type1").jdqLayer({
+                "type" : "tips",
+                "msg"  :  "这是tips类型的标记框"
+            });
+            $(".type2").jdqLayer({
+                "type" : "alert",
+                "msg"  :  "这是alert类型的标记框",
+                "closeBtn" : true,
+                "bgframe" : true,
+                "clickSure" : function(){
+                    //这里是回调函数
+                }
+            });
+            $(".type3").jdqLayer({
+                "type" : "confirm",
+                "msg"  :  "这是confirm类型的标记框",
+                "closeBtn" : true,
+                "bgframe" : true,
+                "btnSureText":"不错",
+                "btnCancelText":"一般般",
+                "clickSure":function(){
+                    $(".type3").jdqLayer({"type":"tips","msg":"谢谢你的评价！","quitTime":"800"});
+                },
+                "clickCancel":function(){
+                    $(".type3").jdqLayer({"type":"tips","msg":"我会努力,总有一天会让你刮目相看！","quitTime":"1500"});
+                }
+            });
+            $(".type4").jdqLayer({
+                "type" : "iframe",
+                "url"  : "demo1.html",
+                "closeBtn" : true,
+                "bgframe" : true,
+                "width" : "600",
+                "height" : "300"
+            });
+        })
+    </pre>
+</div>
 </body>
 <script type="text/javascript" src="../../js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="../../js/jdq-common.js"></script>
