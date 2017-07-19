@@ -625,7 +625,7 @@ section { position:relative;}
 .new-content img {
   margin-bottom: 20px;
 }
-.new-content p,.new-content span {
+.new-content p,.new-content > span {
   font-size: 0.875em;
   line-height: 1.7;
   text-align: left;
@@ -1119,4 +1119,111 @@ button.jdq-sure-btn {
 .jdq-module{
   max-width: inherit;
   min-height: inherit;
+}
+/************************
+ @ jdq-CSS3
+ @btn-ui
+*************************/
+.new-content .small-titile {
+  font-size: 0.875em;
+  font-weight: bold;
+}
+.btn-ui,.btn-ui-list2{
+  padding: 20px;
+}
+.btn-ui:after {
+  content:"";
+  clear: both;
+  display: block;
+  height:0;
+}
+.btn-ui > li {
+  text-align: center;
+}
+.btn-ui > li a{
+  display: block;
+  border:2px solid #6bacdd;
+  padding: 15px 20px;
+  transition: all 0.3s;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.btn-ui-list2 > li a {
+  padding: 15px 20px;
+  display: block;
+}
+.btn-ui > li a:before,.btn-ui > li a:after {
+  content:attr(data-text);
+  position:absolute;
+  overflow: hidden;
+  width: 100%;
+  height:50%;
+  left: 0;
+  color: #fff;
+  background-color: #6bacdd;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+}
+.btn-ui > li a:after{
+  bottom: 0;
+  line-height: 0;
+}
+.btn-ui > li a:before{
+  top: 0;
+  padding-top: 15px;
+}
+.btn-text {
+  display: block;
+  -webkit-transform: scale3d(0.2, 0.2, 1);
+  transform: scale3d(0.2, 0.2, 1);
+  opacity: 0;
+  -webkit-transition: -webkit-transform 0.3s, opacity 0.3s;
+  transition: transform 0.3s, opacity 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
+  text-align: center;
+  cursor: pointer;
+}
+.btn-ui > li a:hover::before {
+  -webkit-transform: translate3d(0, -100%, 0);
+  transform: translate3d(0, -100%, 0);
+}
+.btn-ui > li a:hover::after {
+  -webkit-transform: translate3d(0, 100%, 0);
+  transform: translate3d(0, 100%, 0);
+}
+.btn-ui > li a:hover > span {
+  opacity: 1;
+  -webkit-transform: scale3d(1, 1, 1);
+  transform: scale3d(1, 1, 1);
+}
+.btn-ui-list2 > li a {
+  background-color: #eb7d4b;
+  box-shadow: 0px 6px 0px #c86a40;
+  color: #fff;
+  display: block;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+}
+.btn-ui-list2 > li .btn-down a {
+  box-shadow: 0px 3px 0px #c86a40;
+}
+.btn-wrap {
+  box-shadow: 0px 4px 30px #333;
+  border-radius: 4px;
+  transition: all 0.1s;
+  -webkit-transition: all 0.1s;
+  -moz-transition: all 0.1s;
+}
+.btn-ui-list2 > li .btn-down {
+  box-shadow: 0px 2px 10px #333;
+  transform: translate3d(0,-1px,0);
+  -webkit-transform: translate3d(0,-1px,0);
+  -moz-transform: translate3d(0,-1px,0);
 }

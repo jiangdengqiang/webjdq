@@ -9,12 +9,12 @@
 },
 {
 	"id":2,
-	"title":"Jquery的简单应用",
+	"title":"css3 悬停按钮的特效",
 	"from":"原创",
 	"msg":"",
-	"href":"",
+	"href":"../data/css/btnHoverDemo.html",
     "date":"2017-06-06",
-    "type":"jquery"
+    "type":"css"
 },
   {
     "id":3,
