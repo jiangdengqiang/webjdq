@@ -18,7 +18,7 @@
 },
   {
     "id":3,
-    "title":"Jquery轮播插件",
+    "title":"Jquery无缝轮播插件",
     "from":"原创",
     "msg":"<iframe id='test' onload='this.height=100' src='../data/jquery/rotation.html' width='100%' style='min-height:600px' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'/>",
     "href":"",
