@@ -18,13 +18,13 @@
 <script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
 <script type="text/javascript">
     $(function(){
-        $(".btn-ui-list2 a").bind("mousedown",function(ev){
-            ev.stopPropagation();
+        $(".btn-ui-list2 a").bind("mousedown",function(){
             $(this).parent().addClass("btn-down");
+            return false;
         });
-        $(".btn-ui-list2 a").bind("mouseup",function(ev){
-            ev.stopPropagation();
+        $(".btn-ui-list2 a").bind("mouseup",function(){
             $(this).parent().removeClass("btn-down");
+            return false;
         });
     })
 </script>
