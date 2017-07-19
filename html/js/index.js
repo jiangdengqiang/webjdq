@@ -85,7 +85,13 @@
 								var w=url.indexOf("id");
 								var NewUrl = url.substring(0,w);
 								$("title").html(data[i].title);
-								$(".new-content").html(data[i].msg);
+								if(data[i].href!=""){
+									$.ajax({url:data[i].href,success:function(page){
+										$(".new-content").html(page);
+									}})
+								}else {
+									$(".new-content").html(data[i].msg);
+								}
 								$(".new h2").html(data[i].title);
 								$(".myself").html(data[i].from);
 								data[i].from == "转载"?$(".myself").addClass("reprint"):false;
@@ -99,6 +105,15 @@
 					}
 
 				});
+				/*$.ajax({
+					url:"../data/jquery/layer.html",
+					success:function(data){
+						$(".new-content").html(data);
+					}
+
+				 "msg":"<iframe id='test' onload='this.height=100' src='../data/jquery/layer.html' width='100%' style='min-height:600px' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'/>",
+
+				})*/
 			}
 		}
 	}

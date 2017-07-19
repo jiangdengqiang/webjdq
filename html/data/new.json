@@ -29,8 +29,8 @@
     "id":4,
     "title":"Jquery layer 弹出层插件",
     "from":"原创",
-    "msg":"<iframe id='test' onload='this.height=100' src='../data/jquery/layer.html' width='100%' style='min-height:600px' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'/>",
-    "href":"",
+    "msg":"",
+    "href":"../data/jquery/layer.html",
     "date":"2017-06-28",
     "type":"jquery"
   }

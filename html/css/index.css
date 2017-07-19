@@ -331,7 +331,7 @@ section { position: relative; }
 *************************/
 .jdqlayer { margin: 100px; }
 
-.jdqbtn { padding: 10px 15px; border-radius: 4px; border: 1px solid #eee; font-size: 0.875em; }
+.jdqbtn { padding: 10px 15px; border-radius: 4px; border: 1px solid #eee; font-size: 0.875em; margin-right: 10px; }
 
 .jdqbtn:hover { border: 1px solid #33cc33; }
 

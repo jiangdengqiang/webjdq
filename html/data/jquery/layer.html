@@ -1,21 +1,3 @@
-<html>
-<head>
-<!--head-->
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
-<meta name="apple-mobile-web-app-capable" content="no"/>
-<meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
-<meta name="keywords" content="蒋登强的个人博客，与前端爱好者共同进步的网站，学习各种前端框架,分享前端干货的空间博客。"/>
-<meta name="description" content="蒋登强的个人博客，与前端爱好者共同进步的网站，互相学习，让初学者能看到易学易懂的代码，让中级前端偶尔能开阔一下视野，让高级前端在这里能够轻松体验。"/>
-<link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css?__inline">
-<link rel="stylesheet" href="../../css/index.css"/>
-<title></title>
-<style>
-    body{ padding: 50px;}
-</style>
-</head>
-<body>
 <div class="jdqlayer">
     <a class="jdqlayer-btn jdqbtn type1" href="javascript:;">tips标记弹框</a>
     <a class="jdqlayer-btn jdqbtn type2" href="javascript:;">Alert弹框风格</a>
@@ -127,9 +109,8 @@
         })
     </pre>
 </div>
-</body>
-<script type="text/javascript" src="../../js/jquery-1.8.3.js"></script>
-<script type="text/javascript" src="../../js/jdq-common.js"></script>
+<script type="text/javascript" src="../js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="../js/jdq-common.js"></script>
 <script type="text/javascript">
     $(function(){
         $(".jdqlayer-btn").click(function(){
@@ -159,10 +140,9 @@
             })
             if($(this).hasClass("type4")) $(this).jdqLayer({
                 "type":"iframe",
-                "url":"demo1.html",
+                "url":"../data/jquery/demo1.html",
                 "width":"600"
             })
         })
     })
 </script>
-</html>
