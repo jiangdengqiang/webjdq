@@ -280,6 +280,9 @@ section { position:relative;}
   float: right;
   margin-top: 8px;
 }
+.j_moudel_box2 .right {
+  float: right;
+}
 .share a.qq,.share_news a.qq{
   @include fnIconSprite(qq);
 }
@@ -1227,4 +1230,180 @@ button.jdq-sure-btn {
   transform: translate3d(0,-1px,0);
   -webkit-transform: translate3d(0,-1px,0);
   -moz-transform: translate3d(0,-1px,0);
+}
+/************************
+ @ jdq-CSS3
+ @response
+*************************/
+@media (max-width: 767px){
+  .top {
+    height:500px;
+  }
+  .top .title {
+    font-size: 3em;
+  }
+  .j_moudel_box1 {
+    padding-bottom: 30px;
+  }
+  .j_moudel_box1 p {
+    font-size: 1em;
+  }
+  .j_moudel_box2 {
+    padding: 30px 0;
+  }
+  .j_box > h2 {
+    font-size: 1em;
+    margin-bottom: 10px;
+  }
+  .j_box p {
+    font-size: 0.875em;
+  }
+  .j_box {
+    padding: 10px 20px 0;
+  }
+  .new_list {
+    padding: 0 0 20px 0;
+    margin-bottom: 30px;
+  }
+  .news_mark {
+    padding: 0 20px;
+  }
+  .news_end {
+    margin-top: 20px;
+  }
+  .news_end .more {
+    width: 100%;
+    font-size: 0.875em;
+  }
+  .share_news {
+    float: left;
+    font-size: 0.875em;
+  }
+  .header .logo {
+    width: 50px;
+  }
+  .news-top {
+    padding: 40px 0 20px;
+  }
+  .user a {
+    padding: 35px 15px;
+  }
+  .nav_link {
+    top: 100px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    padding: 20px 0;
+  }
+  .nav a {
+    font-size: 1.5em;
+    padding: 15px 0;
+  }
+  .nav_link > span {
+    width: 25px;
+    height: 3px;
+    margin: 0 auto 6px;
+  }
+  .new {
+    padding: 98px 10px 40px;
+  }
+  .new h2 {
+    font-size: 1.25em;
+  }
+  .new-content a {
+    word-wrap: break-word;
+  }
+  .new-page .new-next,.new-page .new-prev {
+    float: none;
+  }
+  .new-page > a {
+    display: block;
+  }
+  .new-tip .share_news {
+    float: left;
+    margin-top: 5px;
+  }
+  .new-time {
+    width: 100%;
+  }
+  .new-tip {
+    margin-top: 15px;
+  }
+  .new-content h3 {
+    font-size: 1em;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .new-page .new-prev {
+    margin-bottom: 10px;
+  }
+  .new-content {
+    margin: 15px 0;
+    padding: 15px 0;
+    font-size: 0.875em;
+  }
+  .btn-ui > li a {
+    margin-bottom: 10px;
+  }
+  .btn-wrap {
+    margin-bottom: 30px;
+  }
+  .myself {
+    right: 20px;
+    top: 20px;
+    padding: 15px 9px;
+    font-size: 1.25em;
+  }
+  .copyright {
+    padding: 0 20px;
+  }
+  .user .login:hover {
+    box-shadow: 0px 4px 12px #999;
+    background-color: #ed145b;
+    padding: 35px 20px 35px;
+  }
+  .callback {
+    padding: 7px 15px;
+    bottom: 50px;
+    font-size: 1.5em;
+  }
+  .code {
+    padding: 10px 5px;
+    word-wrap: break-word;
+  }
+  .new-content table {
+    font-size: 1em;
+  }
+  .new-content table {
+    margin-top: 10px;
+  }
+  .new-content p, .new-content > span {
+    font-size: 1em;
+  }
+  .jdqlayer {
+    margin: 20px 0;
+  }
+  .jdqlayer:after {
+    content:"";
+    clear: both;
+    display: block;
+    height:0;
+  }
+  .jdqbtn {
+    float: left;
+    margin-bottom: 10px;
+  }
+  .j_moudel_box2 .right {
+    float: none;
+  }
+  .m_article,.page > ul {
+    display: none;
+  }
+  .tags li {
+    margin-right: 15px;
+    margin-bottom: 15px;
+  }
+  .tags li a {
+    padding: 15px 20px;
+  }
 }

@@ -82,7 +82,11 @@
 <script type="text/javascript" src="../../js/jdq-common.js"></script>
 <script type="text/javascript">
     $(function(){
-        $(".jdqslider").jdqSlider({'width':938});
+        var width = 500;
+        if($(window).width() <767){
+            width = 268;
+        }
+        $(".jdqslider").jdqSlider({'width':width});
     })
 </script>
 </html>
