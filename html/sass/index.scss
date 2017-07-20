@@ -11,10 +11,10 @@ $icons-2x: sprite-map("icons-2x/*.png",$spacing: 4px, $layout:smart);
   background-repeat: no-repeat;
   @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx), (max-width: 767px) {
     background-image: sprite-url($icons-2x);
-    background-size: (image-width(sprite-path($icons-2x)) / 2) (image-height(sprite-path($icons-2x)) / 2);
-    background-position: round(nth(sprite-position($icons-2x, $name), 1) / 2) round(nth(sprite-position($icons-2x, $name), 2) / 2);
-    height: image-height(sprite-file($icons-2x, $name)) / 2;
-    width: image-width(sprite-file($icons-2x, $name)) / 2;
+    background-size: (image-width(sprite-path($icons-2x))/2) (image-height(sprite-path($icons-2x))/2);
+    background-position: round(nth(sprite-position($icons-2x, $name), 1)/ 2) round(nth(sprite-position($icons-2x, $name), 2)/ 2);
+    height: image-height(sprite-file($icons-2x, $name))/2;
+    width: image-width(sprite-file($icons-2x, $name))/2;
   }
 };
 abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
@@ -1131,22 +1131,20 @@ button.jdq-sure-btn {
   font-size: 0.875em;
   font-weight: bold;
 }
-.btn-ui,.btn-ui-list2{
+.jdq-btn-box{
   padding: 20px;
 }
-.btn-ui:after {
+.btn-ui-list1:after {
   content:"";
   clear: both;
   display: block;
   height:0;
 }
-.btn-ui > li {
+.btn-ui-list1 > li {
   text-align: center;
 }
-.btn-ui > li a{
-  display: block;
+.btn-ui-list1 > li a {
   border:2px solid #6bacdd;
-  padding: 15px 20px;
   transition: all 0.3s;
   overflow: hidden;
   position: relative;
@@ -1156,7 +1154,7 @@ button.jdq-sure-btn {
   padding: 15px 20px;
   display: block;
 }
-.btn-ui > li a:before,.btn-ui > li a:after {
+.btn-ui-list1 > li a:before,.btn-ui-list1 > li a:after {
   content:attr(data-text);
   position:absolute;
   overflow: hidden;
@@ -1169,12 +1167,12 @@ button.jdq-sure-btn {
   -webkit-transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
 }
-.btn-ui > li a:after{
+.btn-ui-list1 > li a:after{
   bottom: 0;
   left: 0;
   line-height: 0;
 }
-.btn-ui > li a:before{
+.btn-ui-list1 > li a:before{
   top: 0;
   left: 0;
   padding-top: 15px;
@@ -1191,15 +1189,15 @@ button.jdq-sure-btn {
   text-align: center;
   cursor: pointer;
 }
-.btn-ui > li a:hover::before {
+.btn-ui-list1 > li a:hover::before {
   -webkit-transform: translate3d(0, -100%, 0);
   transform: translate3d(0, -100%, 0);
 }
-.btn-ui > li a:hover::after {
+.btn-ui-list1 > li a:hover::after {
   -webkit-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
-.btn-ui > li a:hover > span {
+.btn-ui-list1 > li a:hover > span {
   opacity: 1;
   -webkit-transform: scale3d(1, 1, 1);
   transform: scale3d(1, 1, 1);
@@ -1230,6 +1228,93 @@ button.jdq-sure-btn {
   transform: translate3d(0,-1px,0);
   -webkit-transform: translate3d(0,-1px,0);
   -moz-transform: translate3d(0,-1px,0);
+}
+.jdq-btn-box > li a {
+  display: block;
+  padding: 15px 20px;
+  text-align: center;
+  transition: all 0.3s;
+  color:#fff;
+}
+.btn-ui-list3 > li a{
+  background-color: #17c2a4;
+  position: relative;
+}
+.btn-ui-list3 > li span {
+  position: relative;
+}
+.btn-ui-list3 > li a:before{
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height:100%;
+  z-index: 0;
+  background-color: #14a58c;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+}
+.btn-ui-list3 > li a:hover:before {
+  width:100%;
+  -webkit-animation: btn-slide-right 0.7s;
+  -moz-animation: btn-slide-right 0.7s;
+  -ms-animation: btn-slide-right 0.7s;
+}
+@keyframes btn-slide-right {
+  0%{
+    width:0%;
+    animation-timing-function:ease-in;
+  }
+  50%{
+    width:100%;
+    animation-timing-function:cubic-bezier(0.25,0.1,0.25,1);
+  }
+  80%{
+    width:80%;
+    animation-timing-function:cubic-bezier(0,0,0.25,1);
+  }
+  100%{
+    width:100%;
+    animation-timing-function:cubic-bezier(0,0,0.58,1);
+  }
+}
+@-webkit-keyframes btn-slide-right {
+  0%{
+    width:0%;
+    -webkit-animation-timing-function:ease-in;
+  }
+  50%{
+    width:100%;
+    -webkit-animation-timing-function:cubic-bezier(0.25,0.1,0.25,1);
+  }
+  80%{
+    width:80%;
+    -webkit-animation-timing-function:cubic-bezier(0,0,0.25,1);
+  }
+  100%{
+    width:100%;
+    -webkit-animation-timing-function:cubic-bezier(0,0,0.58,1);
+  }
+}
+@-moz-keyframes btn-slide-right {
+  0%{
+    width:0%;
+    -moz-animation-timing-function:ease-in;
+  }
+  50%{
+    width:100%;
+    -moz-animation-timing-function:cubic-bezier(0.25,0.1,0.25,1);
+  }
+  80%{
+    width:80%;
+    -moz-animation-timing-function:cubic-bezier(0,0,0.25,1);
+  }
+  100%{
+    width:100%;
+    -moz-animation-timing-function:cubic-bezier(0,0,0.58,1);
+  }
 }
 /************************
  @ jdq-CSS3
@@ -1342,7 +1427,7 @@ button.jdq-sure-btn {
     padding: 15px 0;
     font-size: 0.875em;
   }
-  .btn-ui > li a {
+  .btn-ui-list1 > li a {
     margin-bottom: 10px;
   }
   .btn-wrap {
@@ -1405,5 +1490,9 @@ button.jdq-sure-btn {
   }
   .tags li a {
     padding: 15px 20px;
+  }
+  .new-content table td {
+    font-size: 0.75em;
+    word-break: break-word;
   }
 }

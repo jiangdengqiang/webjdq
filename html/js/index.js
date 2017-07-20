@@ -15,7 +15,7 @@
 			})
 		},
 /*点击心心*/
-		/*heart:function(){
+		heart:function(){
 			var i = 0;
 			$("body").on("click",function(event){
 				i++;
@@ -37,7 +37,7 @@
 				colors = color_val[id];
 				return colors;
 			}
-		},*/
+		},
 /*导航栏*/
 		nav:function(){
 			$(".nav_link").on("click",function(){
