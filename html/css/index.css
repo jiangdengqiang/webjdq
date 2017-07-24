@@ -475,6 +475,18 @@ button.jdq-sure-btn { width: 100%; border: 0; background-color: transparent; }
 @keyframes btn-ripple { 100% { top: -12px; right: -12px; bottom: -12px; left: -12px; opacity: 0; } }
 @-webkit-keyframes btn-ripple { 100% { top: -12px; right: -12px; bottom: -12px; left: -12px; opacity: 0; } }
 @-moz-keyframes btn-ripple { 100% { top: -12px; right: -12px; bottom: -12px; left: -12px; opacity: 0; } }
+.btn-ui-list5 > li a { background-color: #e1e1e1; color: #666; position: relative; }
+
+.btn-ui-list5 > li a:after, .btn-ui-list5 > li a:before { content: ""; position: absolute; width: 100%; height: 100%; left: 0; top: 0; }
+
+.btn-ui-list5 > li a:before { border-left: 3px solid #d74680; border-right: 3px solid #d74680; transition: all 0.5s; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; transform: rotateX(-90deg); -webkit-transform: rotateX(-90deg); -moz-transform: rotateX(-90deg); }
+
+.btn-ui-list5 > li a:after { border-top: 3px solid #d74680; border-bottom: 3px solid #d74680; transition: all 0.5s; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; transform: rotateY(-90deg); -webkit-transform: rotateY(-90deg); -moz-transform: rotateY(-90deg); }
+
+.btn-ui-list5 > li a:hover:before { transform: rotateX(0deg); -webkit-transform: rotateX(0deg); -moz-transform: rotateX(0deg); }
+
+.btn-ui-list5 > li a:hover:after { transform: rotateY(0deg); -webkit-transform: rotateY(0deg); -moz-transform: rotateY(0deg); }
+
 /************************ @ jdq-CSS3 @response
 *************************/
 @media (max-width: 767px) { .top { height: 500px; }
