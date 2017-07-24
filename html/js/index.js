@@ -118,7 +118,7 @@
 		}
 	}
 	method.scrollHeight();
-	/*method.heart();*/
+	method.heart();
 	method.nav();
 	method.link();
 	method.share();
