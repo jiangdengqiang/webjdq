@@ -239,13 +239,13 @@ $.fn.extend({
 			}
 			var opts = $.extend({},defaults, options),
 				btnUi = new function(){
-					this.btn = '<div class="jdq-btn-radio-ui"><span class="btnRadio1 jdqBtnRadio">on</span><span class="btnRadio2 jdqBtnRadio">off</span><i class="btn-ball"></i></div>';
+					this.btn = '<div class="jdq-btn-checkbox-ui"><span class="btnRadio1 jdqBtnRadio">on</span><span class="btnRadio2 jdqBtnRadio">off</span><i class="btn-ball"></i></div>';
 				}
 			/*初始化*/
 			var removeNum = "";
 			$(btnUi.btn).appendTo(this);
 			opts.checked ? removeNum=0 : removeNum=1 ;
-			opts.checked ? this.find("input").prop("checked",true) && $(".jdq-btn-radio-ui").removeClass("no") : this.find("input").prop("checked",false) && $(".jdq-btn-radio-ui").addClass("no");
+			opts.checked ? this.find("input").prop("checked",true) && $(".jdq-btn-checkbox-ui").removeClass("no") : this.find("input").prop("checked",false) && $(".jdq-btn-checkbox-ui").addClass("no");
 			this.find(".jdqBtnRadio").eq(removeNum).addClass("checked");
 			this.find(".btn-ball").css({"left":removeNum*50+'%'});
 			this.each(function(){
@@ -254,7 +254,7 @@ $.fn.extend({
 						$index = $this.index();
 					$this.addClass("checked").siblings(".jdqBtnRadio").removeClass("checked");
 					$this.siblings(".btn-ball").stop().animate({"left":$index*50+'%'},200,function(){
-						$index==0?$(".jdq-btn-radio-ui").removeClass("no") && $this.parent(".jdq-btn-radio-ui ").siblings("input").prop("checked",true):$(".jdq-btn-radio-ui").addClass("no") &&  $this.parent(".jdq-btn-radio-ui ").siblings("input").prop("checked",false);
+						$index==0?$(".jdq-btn-checkbox-ui").removeClass("no") && $this.parent(".jdq-btn-checkbox-ui ").siblings("input").prop("checked",true):$(".jdq-btn-checkbox-ui").addClass("no") &&  $this.parent(".jdq-btn-checkbox-ui").siblings("input").prop("checked",false);
 					});
 				})
 			})
