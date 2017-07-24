@@ -539,7 +539,7 @@ button.jdq-sure-btn { width: 100%; border: 0; background-color: transparent; }
   .new-content h3 { font-size: 1em; line-height: 1.7; margin-bottom: 10px; }
   .new-page .new-prev { margin-bottom: 10px; }
   .new-content { margin: 15px 0; padding: 15px 0; font-size: 0.875em; }
-  .btn-ui-list1 > li a { margin-bottom: 10px; }
+  .jdq-btn-box > li a { margin-bottom: 10px; }
   .btn-wrap { margin-bottom: 30px; }
   .myself { right: 20px; top: 20px; padding: 15px 9px; font-size: 1.25em; }
   .copyright { padding: 0 20px; }
