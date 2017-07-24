@@ -1188,6 +1188,7 @@ button.jdq-sure-btn {
   transition-timing-function: cubic-bezier(0.2, 1, 0.3, 1);
   text-align: center;
   cursor: pointer;
+  color:#333;
 }
 .btn-ui-list1 > li a:hover::before {
   -webkit-transform: translate3d(0, -100%, 0);
@@ -1314,6 +1315,53 @@ button.jdq-sure-btn {
   100%{
     width:100%;
     -moz-animation-timing-function:cubic-bezier(0,0,0.58,1);
+  }
+}
+.btn-ui-list4 > li a{
+  background-color: #30bae7;
+  position: relative;
+}
+.btn-ui-list4 > li a:before {
+  content: '';
+  position: absolute;
+  border: #30bae7 solid 6px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.btn-ui-list4 > li a:hover:before {
+  -webkit-animation-name: btn-ripple;
+  animation-name: btn-ripple;
+  -moz-animation-name: btn-ripple;
+}
+@keyframes btn-ripple {
+  100%{
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@-webkit-keyframes btn-ripple {
+  100%{
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
+  }
+}
+@-moz-keyframes btn-ripple {
+  100%{
+    top: -12px;
+    right: -12px;
+    bottom: -12px;
+    left: -12px;
+    opacity: 0;
   }
 }
 /************************
