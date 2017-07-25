@@ -1509,6 +1509,36 @@ button.jdq-sure-btn {
   transform-origin: 50% 0%;
   transform: rotateX(90deg) translateY(-100%);
 }
+.btn-ui-list9 > li a{
+  background-color: #9e54bd;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0px 6px 0px #823aa0;
+}
+.btn-ui-list9 > li a span {
+  display: inline-block;
+  transition: all 0.3s;
+}
+.btn-ui-list9 > li a i {
+  position: absolute;
+  left:-30px;
+  top:50%;
+  margin-top: -9px;
+  transition: all 0.3s;
+  transition-delay: 0.2s;
+  -webkit-transition-delay: 0.2s;
+  -moz-transition-delay: 0.2s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+.btn-ui-list9 > li a:hover span{
+  transform: translateX(500%);
+}
+.btn-ui-list9 > li a:hover i{
+  left:50%;
+  margin-left: -9px;
+}
 @keyframes btn-enlarge {
   0%{
     transform: scale(0);
