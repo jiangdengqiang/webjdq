@@ -1410,6 +1410,7 @@ button.jdq-sure-btn {
 .btn-ui-list7 > li a {
   background-color: #404042;
   position: relative;
+  overflow: hidden;
 }
 .btn-ui-list7 > li a:before {
   content:"";
@@ -1429,6 +1430,84 @@ button.jdq-sure-btn {
   animation:btn-enlarge 0.8s 0.1s;
   -webkit-animation:btn-enlarge 0.8s 0.1s;
   -moz-animation:btn-enlarge 0.8s 0.1s;
+}
+.btn-ui-list8 > li a {
+  background-color: #afd9ee;
+  color:#fff;
+  font-weight: bold;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  text-transform: uppercase;
+  position: relative;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.btn-ui-list8 > li a:after,.btn-ui-list8 > li a:before {
+  text-transform: uppercase;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  line-height: 52px;
+}
+.perspective {
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  perspective: 800px;
+}
+.btn-ui-list8 > li a:after {
+  top: -100%;
+  background: #7aca7c;
+  color: #358337;
+  content: 'It worked!';
+  -webkit-transform-origin: 0% 100%;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform-origin: 0% 100%;
+  -moz-transform: rotateX(90deg);
+  -ms-transform-origin: 0% 100%;
+  -ms-transform: rotateX(90deg);
+  transform-origin: 0% 100%;
+  transform: rotateX(90deg);
+}
+.btn-ui-list8 > li a:before {
+  top: 100%;
+  background: #e96a6a;
+  color: #a33a3a;
+  content: 'Error!';
+  font-weight: 700;
+  font-family: 'Lato', Calibri, Arial, sans-serif;
+  -webkit-transform-origin: 0% 0%;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform-origin: 0% 0%;
+  -moz-transform: rotateX(-90deg);
+  -ms-transform-origin: 0% 0%;
+  -ms-transform: rotateX(-90deg);
+  transform-origin: 0% 0%;
+  transform: rotateX(-90deg);
+}
+.btn-ui-list8 > li a.btn-ok3d {
+  background: #aaa;
+  -webkit-transform-origin: 50% 100%;
+  -webkit-transform: rotateX(-90deg) translateY(100%);
+  -moz-transform-origin: 50% 100%;
+  -moz-transform: rotateX(-90deg) translateY(100%);
+  -ms-transform-origin: 50% 100%;
+  -ms-transform: rotateX(-90deg) translateY(100%);
+  transform-origin: 50% 100%;
+  transform: rotateX(-90deg) translateY(100%);
+}
+.btn-ui-list8 > li a.btn-error3d  {
+  background: #aaa;
+  -webkit-transform-origin: 50% 0%;
+  -webkit-transform: rotateX(90deg) translateY(-100%);
+  -moz-transform-origin: 50% 0%;
+  -moz-transform: rotateX(90deg) translateY(-100%);
+  -ms-transform-origin: 50% 0%;
+  -ms-transform: rotateX(90deg) translateY(-100%);
+  transform-origin: 50% 0%;
+  transform: rotateX(90deg) translateY(-100%);
 }
 @keyframes btn-enlarge {
   0%{
