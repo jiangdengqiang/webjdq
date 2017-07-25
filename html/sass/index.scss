@@ -1407,6 +1407,71 @@ button.jdq-sure-btn {
   -webkit-transform: rotateY(0deg);
   -moz-transform: rotateY(0deg);
 }
+.btn-ui-list7 > li a {
+  background-color: #404042;
+  position: relative;
+}
+.btn-ui-list7 > li a:before {
+  content:"";
+  position: absolute;
+  top:50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  margin-left: -20px;
+  background-color: #fff;
+  opacity: 0;
+  box-shadow: 0px 0px 15px #fff;
+  border-radius: 100%;
+}
+.btn-ui-list7 > li a:hover:before {
+  animation:btn-enlarge 0.8s 0.1s;
+  -webkit-animation:btn-enlarge 0.8s 0.1s;
+  -moz-animation:btn-enlarge 0.8s 0.1s;
+}
+@keyframes btn-enlarge {
+  0%{
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(10);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes btn-enlarge {
+  0%{
+    -webkit-transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    -webkit-transform: scale(10);
+    opacity: 0;
+  }
+}
+@-moz-keyframes btn-enlarge {
+  0%{
+    -moz-transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    -moz-transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    -moz-transform: scale(10);
+    opacity: 0;
+  }
+}
 /************************
  @ jdq-CSS3
  @jdqBtnRadio
