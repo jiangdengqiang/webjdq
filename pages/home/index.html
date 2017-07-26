@@ -8,8 +8,9 @@
 <body>
 	{% include "../templates/layouts/nav.html" %}
 	<header class="top">
-		<div class="top_bg"></div>
-		<h1 class="title">My blog space</h1>
+		<!--<div class="top_bg"></div>
+		<h1 class="title">My blog space</h1>-->
+		<canvas id="canvas"></canvas>
 	</header>
 	<section class="j_moudel_box1">
 		<div class="author"><img src="../images/autor.jpg"></div>
@@ -174,8 +175,5 @@
 </body>
 {% include "../templates/partials/js.html" %}
 <script type="text/javascript" src="../js/index.js"></script>
-<script type="text/javascript">
-	$(function(){
-	})
-</script>
+<script src="../js/cavas.js"></script>
 </html>
