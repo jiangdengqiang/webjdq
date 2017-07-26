@@ -1438,7 +1438,6 @@ button.jdq-sure-btn {
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  text-transform: uppercase;
   position: relative;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
@@ -1538,6 +1537,48 @@ button.jdq-sure-btn {
 .btn-ui-list9 > li a:hover i{
   left:50%;
   margin-left: -9px;
+}
+.btn-ui-list10 > li a {
+  background-color: #ff6a00;
+  position: relative;
+  box-shadow:0px 6px 0px #c86a40;
+  border-radius: 4px;
+}
+.btn-ui-list10 > li a span {
+  letter-spacing: -4px;
+}
+.btn-ui-list10 > li a:before {
+  content:attr(data-text);
+  position: absolute;
+  font-size: 1em;
+  color:#fff;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  line-height: 52px;
+  background-color: #ff6a00;
+  box-shadow: 0px 6px 0px #c86a40;
+  border-radius: 4px;
+
+}
+.btn-ui-list10 > li a:hover:before{
+    animation: text-shadow 0.8s;
+}
+@keyframes  text-shadow {
+  0%{
+    opacity: 0;
+    transform: scale(0);
+  }
+  50%{
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100%{
+    opacity: 0;
+    transform: scale(1.8);
+  }
 }
 @keyframes btn-enlarge {
   0%{
