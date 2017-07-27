@@ -158,8 +158,8 @@ section { position:relative;}
 }*/
 .nav_link {
   position: fixed;
-  top:60px;
-  right:40px;
+  top:14px;
+  right:60px;
   width: 100px;
   height:100px;
   border-radius:100%;
@@ -380,6 +380,7 @@ section { position:relative;}
   border:1px solid #d7d7d7;
   height:50px;
   padding:0 80px 0 20px;
+  color:#666;
 }
 .search_btn {
   width: 48px;
@@ -414,12 +415,16 @@ section { position:relative;}
   text-align: center;
   display: inline-block;
   padding:15px 35px;
-  background-color:#ea4c89;
+  background-color:#eb7d4b;
   color:$whiteColor;
+  transition: all 0.2s;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
 }
 .news_end .more:hover{
-    background-color: #ed145b;
-    box-shadow: 0px 0px 10px #ea4c89;
+    box-shadow: 1px 3px 10px #999;
+    opacity:0.8;
+    border-radius: 4px;
 }
 .tags li {
   border:1px solid #d7d7d7;
@@ -448,7 +453,7 @@ section { position:relative;}
 }
 .page li a {
   display: block;
-  border:1px solid #333;
+  border:2px solid #eb7d4b;
   padding: 15px 35px;
   font-size: 1.25em;
   transition: all 0.3s;
@@ -457,8 +462,8 @@ section { position:relative;}
 }
 .page li:hover a,.page li.active a{
   color:$whiteColor;
-  border:1px solid #fff;
-  background-color: #000;
+  border:2px solid #fff;
+  background-color: #eb7d4b;
 }
 .page li span {
   display: block;
@@ -514,7 +519,7 @@ section { position:relative;}
 }
 /*new page*/
 .header {
-  background-color: rgba(0,0,0,0.3);
+  background-color: rgba(0,0,0,0.6);
   position: fixed;
   width: 100%;
   top: 0;
@@ -537,7 +542,7 @@ section { position:relative;}
   float: right;
 }
 .user .login {
-  background-color: #ea4c89;
+  background-color: #eb7d4b;
 }
 .user .login:hover {
   box-shadow: 0px 4px 12px #999;
@@ -971,6 +976,7 @@ section { position:relative;}
   width: 100%;
   background-color: #404042;
   opacity: 0.8;
+  z-index: 100;
 }
 .jdq-alert-layer {
   position: fixed;
@@ -1687,6 +1693,103 @@ button.jdq-sure-btn {
   top:0;
   left: 0;
   background-color: #fff;
+}
+/************************
+ @ list
+*************************/
+.list-box {
+  min-height: 700px;
+  padding-bottom: 30px;
+}
+.bread_crumb {
+  padding:10px 0;
+}
+.list_search {
+  margin-top: 35px;
+}
+.list_search .search_btn {
+  width: 80px;
+}
+.bread_crumb:after,.page-btn:after{
+  content:"";
+  clear: both;
+  display: block;
+  height: 0;
+}
+.crumbs {
+  float: left;
+}
+.crumbs li {
+  float: left;
+  margin-right: 10px;
+  font-size: 0.875em;
+}
+.crumbs li a,.crumbs li > span{
+  margin-right: 5px;
+}
+.crumbs li a{
+  color:#eb7d4b;
+}
+.search_end {
+  float: left;
+  font-size: 0.875em;
+}
+.search_end > span {
+  font-size: 1.5em;
+  margin: -10px 4px 0;
+  color:#eb7d4b;
+  display: inline-block;
+  font-weight: bold;
+}
+.list {
+  margin-bottom: 30px;
+  transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+}
+.list:hover {
+  transform: translate(0px,3px);
+  -webkit-transform: translate(0px,3px);
+  -moz-transform: translate(0px,3px);
+  box-shadow: 0px 15px 25px #ccc;
+}
+.list a {
+  display: block;
+  cursor: pointer;
+}
+.list-txt {
+  padding:20px;
+  border:1px solid #e0dfdf;
+  border-top: 0;
+}
+.list-txt > h3 {
+  font-size: 1em;
+}
+.list-txt h3 > span {
+  font-size: 1.125em;
+  font-weight: bold;
+  color:#eb7d4b;
+  margin: 0 3px;
+}
+.list-txt > small {
+  margin-top: 10px;
+  display: inline-block;
+  line-height: 1.7;
+  font-size: 0.75em;
+}
+.page-btn {
+  text-align: center;
+}
+.page-btn .next,.page-btn .prev {
+  display: inline-block;
+  margin-right: 20px;
+}
+.page-btn .next > a{
+  padding: 15px 60px;
+}
+.page-btn.btn-ui-list9 > li a {
+  background-color: #eb7d4b;
+  box-shadow: none;
 }
 /************************
  @ jdq-CSS3
