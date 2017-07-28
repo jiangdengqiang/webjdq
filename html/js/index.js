@@ -115,6 +115,38 @@
 
 				})*/
 			}
+		},
+/*首页内容ajax加载*/
+		indexContent:function(){
+			$.ajax({url:'../data/new.json',success:function(data){
+				var newListLeft = "";
+				var newListRight = "";
+				for(var i =0;i<data.length;i++){
+					if(data[i].sort==1) {
+						newListLeft += '<div class="new_list">' +
+							'<img src="' + data[i].imgSrc + '" />' +
+							'<div class="news_mark"><span class="introduction">案例</span><span class="point"></span><span class="date">' + data[i].date + '</span></div>' +
+							'<div class="j_box"><h2>' + data[i].title + '</h2><p>' + data[i].desc + '</p>' +
+							'<div class="clear news_end"><a href="'+(data[i].newSrc+data[i].id)+'" class="more">查看更多</a><div class="share_news"><span>分享到：</span>' +
+							'<a href="#" class="qq" title="分享给QQ好友"><i></i></a><a href="#" class="qqkj" title="分享到QQ空间"><i></i></a><a href="#" class="wx" title="分享到微信"><i></i></a><a href="#" class="wb" title="分享到微博"><i></i></a>' +
+							'</div></div></div></div>';
+					}
+					if(data[i].sort==2){
+						newListRight +='<div class="new_recent"><a class="new_href" href="'+(data[i].newSrc+data[i].id)+'"><span><img src="'+data[i].imgSrc+'" /></span>'+
+										'<div class="news_mark"><span class="introduction">文章</span><span class="point"></span><span class="date">'+data[i].date+'</span></div>'+
+										'<h3 class="j_txt">'+data[i].title+'</h3></a></div>';
+					}
+				}
+				$(".j_new").append(newListLeft);
+				$(".m_article").append(newListRight);
+			}})
+		},
+/*首页分页ajax加载*/
+		page:function(){
+			$(".next a").bind("click",function(){
+				$(this).sqlData();
+			})
+
 		}
 	}
 	method.scrollHeight();
@@ -124,5 +156,7 @@
 	method.share();
 	$(window).load(function(){
 		method.hrefLink();
+		method.indexContent();
+		method.page();
 	})
 })(jQuery);
