@@ -105,15 +105,6 @@
 					}
 
 				});
-				/*$.ajax({
-					url:"../data/jquery/layer.html",
-					success:function(data){
-						$(".new-content").html(data);
-					}
-
-				 "msg":"<iframe id='test' onload='this.height=100' src='../data/jquery/layer.html' width='100%' style='min-height:600px' frameborder='no' border='0' marginwidth='0' marginheight='0' scrolling='no' allowtransparency='yes'/>",
-
-				})*/
 			}
 		},
 /*首页内容ajax加载*/
